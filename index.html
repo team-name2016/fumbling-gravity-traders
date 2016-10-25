@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="css/style.css">
+	<link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Montserrat" rel="stylesheet">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+	<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+	<link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
+	<link rel="apple-touch-icon" sizes="57x57" href="images/apple-touch-icon-57x57.png" />
+	<link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png" />
+	<link rel="apple-touch-icon" sizes="76x76" href="images/apple-touch-icon-76x76.png" />
+	<link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png" />
+	<link rel="apple-touch-icon" sizes="120x120" href="images/apple-touch-icon-120x120.png" />
+	<link rel="apple-touch-icon" sizes="144x144" href="images/apple-touch-icon-144x144.png" />
+	<link rel="apple-touch-icon" sizes="152x152" href="images/apple-touch-icon-152x152.png" />
+	<link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon-180x180.png" />
+	<title>Good Host | Allergen-Free Recipes</title>
+</head>
+<body>
+<!-- header begins -->
+<header>
+	<div class="wrapper">
+		<div class="headerContent">
+			<h1>Good Host</h1>
+			<h2>Allergies suck, these recipes don't.</h2>
+		</div>
+	</div>	
+</header>
+<main>
+<section class="allergyRecipe">
+	<div class="wrapper">
+		<div class="chooseContent">
+			<form action="" class="allergyForm">
+				<!-- choose your allergies -->	
+				
+				
+				<h2 class="stepOne"><span class="red">Step One:</span> Select any allergies that you or your guest(s) may have.</h2>
+				
+				<div class="allergyTypes">
+					
+					<div class="gluten allergySelection">
+						<img src="images/gluten.png" alt="Image of Gluten Crossed Out" data-id="gluten" class="allergyImage">
+						<input type="checkbox" id="gluten" name="chooseAllergy" value="393^Gluten-Free">
+						<label for="gluten">Gluten-Free</label>
+					</div>
+					
+					<div class="soy allergySelection">
+						<img src="images/soy.png" alt="Image of Soy Crossed Out" class="allergyImage">	
+						<input type="checkbox" id="soy" name="chooseAllergy" value="400^Soy-Free">
+						<label for="soy">Soy-Free</label>
+					</div>
+
+					<div class="dairy allergySelection">
+						<img src="images/dairy.png" alt="Image of Dairy Crossed Out" class="allergyImage">
+						<input type="checkbox" id="dairy" name="chooseAllergy" value="396^Dairy-Free">
+						<label for="dairy">Dairy-Free</label>
+					</div>
+
+					<div class="peanut allergySelection">
+						<img src="images/peanut.png" alt="Image of Peanut Crossed Out" class="allergyImage">	
+						<input type="checkbox" id="nut" name="chooseAllergy" value="394^Peanut-Free">
+						<label for="nut">Peanut-Free</label>
+					</div>
+
+					<div class="treeNut allergySelection">
+						<img src="images/treeNut.png" alt="Image of Tree Nut Crossed Out" class="allergyImage">	
+						<input type="checkbox" id="treeNut" name="chooseAllergy" value="395^Tree Nut-Free">
+						<label for="treeNut">Tree Nut-Free</label>
+					</div>
+					
+					<div class="wheat allergySelection">
+						<img src="images/wheat.png" alt="Image of Wheat Crossed Out" class="allergyImage">
+						<input type="checkbox" id="wheat" name="chooseAllergy" value="392^Wheat-Free">
+						<label for="wheat">Wheat-Free</label>
+					</div>
+					
+					<div class="seafood allergySelection">
+						<img src="images/fish.png" alt="Image of Fish Crossed Out" class="allergyImage">
+						<input type="checkbox" id="seafood" name="chooseAllergy" value="398^Seafood-Free">
+						<label for="seafood">Seafood-Free</label>
+					</div>
+
+					<div class="egg allergySelection">
+						<img src="images/egg.png" alt="Image of Egg Crossed Out" class="allergyImage">
+						<input type="checkbox" id="egg" name="chooseAllergy" value="397^Egg-Free">
+						<label for="egg">Egg-Free</label>
+					</div>
+					
+					<div class="searchRecipe">
+					<h2 class="stepTwo"><span class="red">Step Two: </span>Search for a recipe below.</h2>
+					<!-- search for a recipe -->
+						<input type="text" id="recipeSearch" placeholder="What do you want to make?" required="true" onfocus="this.placeholder = ''" onblur="this.placeholder = 'What do you want to make?'">
+					</div>
+
+				</div>
+				<input type="submit" value="Find Your Recipe">
+			</form>
+		</div>
+	</div>
+</section>
+<!-- display results  -->
+<section class="displayResults">
+	<div class="wrapper">
+		<div class="resultsContent">
+			<ul class="resultsUl">
+				<!-- <li class="resultsLi">
+					<div class="cardImage">
+						<img src="' + resultsImage + '" alt="">
+					</div>
+					<div class="cardTitle">' + resultsName + '</div>
+					<div class="resultTime">' + resultsTime + '</div>
+				</li> -->
+
+			</ul>
+		</div>
+	</div>
+</section>
+</main>
+
+<!-- footer begins -->
+<footer>
+	<div class="wrapper">
+		<div class="footerContent">
+			<div class="footerLeft">
+				<p>Created by <a href="http://adamfeldman.io" target="_blank">Adam Feldman</a><a href="http://twitter.com/_adamfeldman" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></p>
+			</div>
+			<div class="footerRight">
+				<p>Powered by <a href="http://yummly.com" target="_blank">Yummly</a> // Icons by <a href="https://thenounproject.com/" target="_blank">The Noun Project</a></p>
+			</div>
+		</div>
+	</div>	
+</footer>
+
+<!-- scripts begin -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="js/allergy.js"></script>
+</body>
+</html>
