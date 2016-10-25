@@ -1,0 +1,67 @@
+header {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 25px auto 100px auto;
+
+	@media all and (max-width: 730px) {
+		margin: 25px auto 70px auto;
+	}
+
+}
+
+.headerContent {
+	h1 {
+		font-family: 'Abril Fatface', cursive;
+		text-align: center;
+		letter-spacing: 2px;
+		color: $red;	
+		position: relative;
+		font-size: 13.0rem;
+
+		@media all and (max-width: 517px) {
+			font-size: 10.0rem;
+		}
+
+		@media all and (max-width: 403px) {
+			font-size: 8.8rem;
+		}
+
+		@media all and (max-width: 365px) {
+			font-size: 7.64rem;
+		}
+
+		// &:after {
+		// 	content: " ";
+		// 	width: 60px;
+		// 	display: block;
+		// 	border-bottom: 7px solid $red;
+		// 	position: absolute;
+		// 	right: 50%;
+		// 	transform: translateX(50%);
+		// 	// bottom: 10px;
+		// }
+	}
+
+	h2 {
+		margin-top: -22px;
+		text-align: center;
+		color: lighten($black,3%);
+		letter-spacing: .5px;
+		font-size: 2.8rem;
+
+		@media all and (max-width: 517px) {
+			margin-top: -15px;
+			font-size: 2.3rem;
+		}
+
+		@media all and (max-width: 403px) {
+			margin-top: -12px;
+			font-size: 1.9rem;
+		}
+
+		@media all and (max-width: 365px) {
+			font-size: 1.8rem;
+		}
+	}
+}
