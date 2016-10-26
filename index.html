@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<link rel="import" href="http://www.yummly.com/recipe/Cookie-Dough-Dessert-1901812">
 	<link rel="stylesheet" href="public/styles/style.css">
 	<link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Montserrat" rel="stylesheet">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,8 +24,8 @@
 <header>
 	<div class="wrapper">
 		<div class="headerContent">
-			<h1>Good Host!</h1>
-			<h2>Allergies suck, these recipes don't.</h2>
+			<h1>Kitchen Toons</h1>
+			<!-- <h2>Allergies suck, these recipes don't.</h2> -->
 		</div>
 	</div>	
 </header>
@@ -38,7 +39,7 @@
 				
 				<h2 class="stepOne"><span class="red">Step One:</span> Select any allergies that you or your guest(s) may have.</h2>
 				
-				<div class="allergyTypes">
+				<!-- <div class="allergyTypes">
 					
 					<div class="gluten allergySelection">
 						<img src="images/gluten.png" alt="Image of Gluten Crossed Out" data-id="gluten" class="allergyImage">
@@ -101,26 +102,129 @@
 	</div>
 </section>
 <!-- display results  -->
-<section class="displayResults">
+<!-- <section class="displayResults">
 	<div class="wrapper">
 		<div class="resultsContent">
 			<ul class="resultsUl">
-				<!-- <li class="resultsLi">
+				<li class="resultsLi">
 					<div class="cardImage">
 						<img src="' + resultsImage + '" alt="">
 					</div>
 					<div class="cardTitle">' + resultsName + '</div>
 					<div class="resultTime">' + resultsTime + '</div>
-				</li> -->
+				</li>
 
 			</ul>
 		</div>
 	</div>
-</section>
+</section> -->
 </main>
 
+
+
+
+<style>
+	
+body {background-color:#fff;}
+
+.recipeImageContainer {width:100%;
+			
+			
+			margin:0 auto;
+			overflow:hidden;}
+
+.summaryBox {width:100%;
+			margin:1rem auto;}
+
+.recipeListContainer {width:100%;
+		
+		/*height:50px;*/
+		margin:4rem auto;
+		}
+
+.linktoYummily {
+				background-color:#E16120;
+				width:100%;
+				padding:2rem;
+				text-align:center;
+				color:#fff;
+				font-size: 2rem;
+				/*position:fixed;*/
+				bottom:0;
+				margin:0 auto;}
+
+/*yummly dom elements*/
+
+.primary-info {padding-left:.5rem;} 
+
+
+.yummilyBox {}
+
+
+</style>
+
+
+
+
+
+
+	<!-- <link rel="import" href="http://www.yummly.com/recipe/Cookie-Dough-Dessert-1901812"> -->
+	<!-- <link rel="stylesheet" href="styles.css"> -->
+<!-- </head> -->
+<!-- <body class="ourClas"> -->
+	<!-- <h1>Spotify Controls</h1> -->
+	<!-- <p>Login Info</p> -->
+	<section class="yummilyBox">
+	<div class="recipeImageContainer" id="recipeImageContainer"></div>
+	<div class="summaryBox" id="summaryBox"></div>
+	<div class="recipeListContainer" id="recipeListContainer"></div>
+	<div class="linktoYummily" id="linktoYummily">click here to read full directions</div>
+	</section>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script>
+
+var link = document.querySelector('link[rel="import"]');
+    var content = link.import;
+     // var el = content.querySelector('body');
+     // var el = content.querySelector('.recipe');
+     var recipeImage = content.querySelector('.recipe-details');
+     var summary = content.querySelector('.RecipeSummary');
+     // var finalLink = content.querySelector('.recipe-show-full-directions');
+
+     var recipeList = content.querySelector('.recipe-ingredients');
+
+     recipeImageContainer.appendChild(recipeImage.cloneNode(true));
+     summaryBox.appendChild(summary.cloneNode(true));
+
+     recipeListContainer.appendChild(recipeList.cloneNode(true));
+     
+     // finalBox.appendChild(finalLink.cloneNode(true));
+
+     $('.units').hide();
+     $('.y-icon').hide();
+
+
+     // var linkaddy ="http://www.yummly.com/recipe/" + Id from api
+
+
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!-- footer begins -->
-<footer>
+<!-- <footer>
 	<div class="wrapper">
 		<div class="footerContent">
 			<div class="footerLeft">
@@ -131,7 +235,7 @@
 			</div>
 		</div>
 	</div>	
-</footer>
+</footer> -->
 
 <!-- scripts begin -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
