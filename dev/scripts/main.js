@@ -47,9 +47,23 @@ allergyApp.displayResults = function(results) {
 	console.log(resultsId);
 
 
-	$('.yummlyImport').attr('href', 'http://www.yummly.com/recipe/' + resultsId);
-var ourAttribute = $('.yummlyImport').attr('href');
-	console.log('Loggging this: ' + ourAttribute);
+	// $('link[rel="import"]').attr('href', 'http://www.yummly.com/recipe/' + resultsId);
+
+
+		$('link[rel="import"]').attr('href','http://www.yummly.com/recipe/Mac-and-Cheese-in-a-Mug_-850468');
+		var link = document.querySelector('link[rel="import"]');
+	    var content = link.import;
+	     var recipeImage = content.querySelector('.recipe-details');
+	     var summary = content.querySelector('.RecipeSummary');
+	     var recipeList = content.querySelector('.recipe-ingredients');
+	     recipeImageContainer.appendChild(recipeImage.cloneNode(true));
+	     summaryBox.appendChild(summary.cloneNode(true));
+	     recipeListContainer.appendChild(recipeList.cloneNode(true));
+
+	     $('.units').hide();
+	     $('.y-icon').hide();
+
+
 
 
 	$('.resultsUl').append('<li class="resultsLi"><div class="cardImage"><a href="http://www.yummly.com/recipe/'+resultsId+'" target="_blank"><img src="' + resultsImage + '" alt=""></a></div><div class="cardTitle"><a href="http://www.yummly.com/recipe/'+resultsId+'" target="_blank">' + resultsName + '</a></div><div class="resultTime"><i class="fa fa-clock-o" aria-hidden="true"></i> ' + resultsTime + ' mins</div><div class="resultId"><a href="http://www.yummly.com/recipe/'+resultsId+'" target="_blank">Click <span class="here">HERE</span> for full recipe</a></div></li>');
@@ -90,24 +104,6 @@ allergyApp.init = function() {
 // Doc ready, run init
 $(function() {
 	allergyApp.init();
-
-
-// $('.linktoYummily').on('click',function(){
-	$(this).css('color','red');
-	$('link[rel="import"]').attr('href','http://www.yummly.com/recipe/Mac-and-Cheese-in-a-Mug_-850468');
-	var link = document.querySelector('link[rel="import"]');
-    var content = link.import;
-     var recipeImage = content.querySelector('.recipe-details');
-     var summary = content.querySelector('.RecipeSummary');
-     var recipeList = content.querySelector('.recipe-ingredients');
-     recipeImageContainer.appendChild(recipeImage.cloneNode(true));
-     summaryBox.appendChild(summary.cloneNode(true));
-     recipeListContainer.appendChild(recipeList.cloneNode(true));
-
-     $('.units').hide();
-     $('.y-icon').hide();
-
-
 
 // })
 
