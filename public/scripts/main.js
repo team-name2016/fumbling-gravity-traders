@@ -53,11 +53,11 @@ allergyApp.displayResults = function (results) {
 allergyApp.init = function () {
 	$('.allergyForm').on('submit', function (e) {
 		e.preventDefault();
-		$('html, body').animate({
-			scrollTop: $('.displayResults').offset().top
-		}, 1150);
+		// $('html, body').animate({
+		//         scrollTop: $('.displayResults').offset().top
+		//     }, 1150);
 		var chosenRecipes = $('input[type=text]').val();
-		// console.log(chosenRecipes);
+		console.log(chosenRecipes);
 
 		var chosenAllergies = $('input[type=checkbox]:checked');
 		var allAllergies = $.map(chosenAllergies, function ($allergy, index) {
