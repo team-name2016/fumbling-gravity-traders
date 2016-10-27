@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Timer Test</title>
+	<link rel="stylesheet" href="FlipClock-master/compiled/flipclock.css">
+<style>
+	
+</style>
+</head>
+<body>
+
+<div class="your-clock">
+
+	
+</div>
+
+<button id="startTimer">START TIMER</button>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="FlipClock-master/compiled/flipclock.min.js"></script>
+<script>
+	$(function() {
+		var time = parseInt('2000');
+		var clock = $('.your-clock').FlipClock(time, {
+			clockFace: 'MinuteCounter',
+			autoStart: false,
+			countdown: true
+		});
+		$('#startTimer').on('click', function() {
+
+			var clock = $('.your-clock').FlipClock(time, {
+				clockFace: 'MinuteCounter',
+				autoStart: true,
+				countdown: true
+			});
+		});
+		
+		// var event = clock.on('click' function() {
+			
+		// 	// This code will trigger every time this event is triggered.
+		// });
+	    console.log( "ready!" );
+	});
+</script>
+</body>
+</html>
