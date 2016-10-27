@@ -145,9 +145,10 @@ allergyApp.specificRecipe = function(recipeId) {
 		}
 	})
 	.then(function(recipeData) {
-		var itemName = recipeData.id
+		// var itemName ={};
+		// var itemName = recipeData;
 		console.log('clyde');
-		console.log('yo:'+ itemName);
+		console.log(recipeData);
 		// $('.resultsUl').html('');
 		// var filteredRecipes = recipeData.matches;
 		// console.log(filteredRecipes);
