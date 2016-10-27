@@ -4,6 +4,8 @@
 	justify-content: center;
 }
 
+
+
 h2.stepOne  {
 		margin-left: 4%;
 		letter-spacing: .5px;
@@ -233,7 +235,7 @@ color: lighten($black,20%) !important;
 
 .resultsLi {
 	display: inline-block;
-	border: 4px double lighten($black,7%);
+	// border: 4px double lighten($black,7%);
 	border-radius: 3px;
 	padding: 1.5%;
 	margin: 28px;
