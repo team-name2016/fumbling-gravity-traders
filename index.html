@@ -6,8 +6,8 @@
 
 	<!-- <link class="displayedRecipe" rel="import" href="http://www.yummly.com/recipe/Mac-and-Cheese-in-a-Mug_-850468"> -->
 	
-	<link id="yummlyImport"  rel="import" >
-	<link id="yummlyImport2"  rel="import" >
+	<!-- <link id="yummlyImport"  rel="import" href="http://www.spoonforkbacon.com/2016/10/maple-pear-and-ginger-pie/"> -->
+	
 
 	
 	<link rel="stylesheet" href="public/styles/style.css">
@@ -31,9 +31,7 @@
 <header>
 	<div class="wrapper">
 		<div class="headerContent">
-			<img class="svg hat" src="dev/images/hat.svg" alt="">
-			<h1>Kitchen Tunes</h1>
-			<img class="svg music" src="dev/images/music.svg" alt="">
+			<h1><span class="box"></span><span class="ki">Ki</span><span><img class="hat" src="dev/images/hat.svg" alt=""></span>tchen Tu<span><img class="music" src="dev/images/music.svg" alt=""></span>es</h1>
 			<!-- <h2>Allergies suck, these recipes don't.</h2> -->
 		</div>
 	</div>	
@@ -129,8 +127,15 @@
 </section>
 </main>
 
+<div class="objectTest">
 
+<object type="text/html" data="http://www.spoonforkbacon.com/2016/10/maple-pear-and-ginger-pie/"></object>
+hello
+</div>
 
+<div class="impBox" id="impBox">
+
+</div>
 
 <!-- <style>
 	
@@ -191,72 +196,75 @@ body {background-color:#fff;}
 	</section>
 
 
-<!-- <script>
+<script>
 
 
 // var myNewLink = $('link[rel="import"]');
 
 // myNewLink.attr('href','http:\/\/www.yummly.com/recipe/Mac-and-Cheese-in-a-Mug_-850468');
 
-$('#yummlyImport').attr('href','http:\/\/www.yummly.com/recipe/Mac-and-Cheese-in-a-Mug_-850468');
+// $('#yummlyImport').attr('href','http:\/\/www.yummly.com/recipe/Mac-and-Cheese-in-a-Mug_-850468');
 
 // myNewLink.attr('rel','[rel="import"]');
 
 // $("head").append(myNewLink);
-setTimeout(function(){
+// setTimeout(function(){
+
+
 // var link = document.querySelector('link[rel="import"]');
 
-var link = document.getElementById('yummlyImport');
-// var link =$('#yummlyImport2');
-    var content = link.import;
-     var recipeImage = content.querySelector('.recipe-details');
-     var summary = content.querySelector('.RecipeSummary');
-     var recipeList = content.querySelector('.recipe-ingredients');
+// // var link = document.getElementById('yummlyImport');
+// // var link =$('#yummlyImport2');
+//     var content = link.import;
+//      // var recipeImage = content.querySelector('.recipe-details');
+//      // var summary = content.querySelector('.RecipeSummary');
+//      // var recipeList = content.querySelector('.recipe-ingredients');
+//      var total = content.querySelector('html');
 
-     recipeImageContainer.appendChild(recipeImage.cloneNode(true));
-     summaryBox.appendChild(summary.cloneNode(true));
+//      impBox.appendChild(total.cloneNode(true));
+//      // summaryBox.appendChild(summary.cloneNode(true));
 
-     recipeListContainer.appendChild(recipeList.cloneNode(true));
+//      // recipeListContainer.appendChild(recipeList.cloneNode(true));
      
      
 
-     $('.units').hide();
-     $('.y-icon').hide();
+//      // $('.units').hide();
+//      // $('.y-icon').hide();
 
-},3000);
+// },19000);
     
 
 
-setTimeout(function(){
+// setTimeout(function(){
 
-// $('#yummlyImport').attr('href','http:\/\/www.yummly.com/recipe/Mac-and-Cheese-in-a-Mug_-850468');
-$('#yummlyImport2').attr('href','http:\/\/www.yummly.com/recipe/Baked-Macaroni-and-Cheese-471277');
+// // $('#yummlyImport').attr('href','http:\/\/www.yummly.com/recipe/Mac-and-Cheese-in-a-Mug_-850468');
+// $('#yummlyImport2').attr('href','http:\/\/www.yummly.com/recipe/Baked-Macaroni-and-Cheese-471277');
 
 
-setTimeout(function(){
-var link2 = document.getElementById('yummlyImport2');
-    var content = link2.import;
+// setTimeout(function(){
+// var link2 = document.getElementById('yummlyImport2');
+//     var content = link2.import;
    
-     var recipeImage = content.querySelector('.recipe-details');
-     var summary = content.querySelector('.RecipeSummary');
-     // var finalLink = content.querySelector('.recipe-show-full-directions');
+//      var recipeImage = content.querySelector('.recipe-details');
+//      var summary = content.querySelector('.RecipeSummary');
+//      // var finalLink = content.querySelector('.recipe-show-full-directions');
 
-     var recipeList = content.querySelector('.recipe-ingredients');
+//      var recipeList = content.querySelector('.recipe-ingredients');
 
-     recipeImageContainer.appendChild(recipeImage.cloneNode(true));
-     summaryBox.appendChild(summary.cloneNode(true));
+//      recipeImageContainer.appendChild(recipeImage.cloneNode(true));
+//      summaryBox.appendChild(summary.cloneNode(true));
 
-     recipeListContainer.appendChild(recipeList.cloneNode(true));
+//      recipeListContainer.appendChild(recipeList.cloneNode(true));
      
-     // finalBox.appendChild(finalLink.cloneNode(true));
+//      // finalBox.appendChild(finalLink.cloneNode(true));
 
-     $('.units').hide();
-     $('.y-icon').hide();
-},4000);
+//      $('.units').hide();
+//      $('.y-icon').hide();
+// },4000);
 
-},4000);
+// },4000);
 
-</script> -->
+</script>
 
 
 

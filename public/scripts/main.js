@@ -120,9 +120,10 @@ allergyApp.specificRecipe = function (recipeId) {
 	}, _defineProperty(_$$ajax, "url", "http://api.yummly.com/v1/api/recipe/" + recipeId + "?_app_id=" + allergyApp.id + "&_app_key=" + allergyApp.key), _defineProperty(_$$ajax, "method", 'GET'), _defineProperty(_$$ajax, "dataType", 'json'), _defineProperty(_$$ajax, "data", {
 		requirePictures: true
 	}), _$$ajax)).then(function (recipeData) {
-		var itemName = recipeData.id;
+		// var itemName ={};
+		// var itemName = recipeData;
 		console.log('clyde');
-		console.log('yo:' + itemName);
+		console.log(recipeData);
 		// $('.resultsUl').html('');
 		// var filteredRecipes = recipeData.matches;
 		// console.log(filteredRecipes);
