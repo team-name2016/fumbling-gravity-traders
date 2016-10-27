@@ -2,11 +2,12 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<!-- <link class="yummlyImport" rel="import" href="http://www.yummly.com/recipe/Mac-and-Cheese-in-a-Mug_-850468"> -->
+	<!-- <link rel="import"> -->
 
 	<!-- <link class="displayedRecipe" rel="import" href="http://www.yummly.com/recipe/Mac-and-Cheese-in-a-Mug_-850468"> -->
 	
-	<!-- <link class="yummlyImport" rel="import" href="http://www.yummly.com/recipe/Mac-and-Cheese-in-a-Mug_-850468"> -->
+	<link id="yummlyImport"  rel="import" >
+	<link id="yummlyImport2"  rel="import" >
 
 	
 	<link rel="stylesheet" href="public/styles/style.css">
@@ -23,7 +24,7 @@
 	<link rel="apple-touch-icon" sizes="144x144" href="images/apple-touch-icon-144x144.png" />
 	<link rel="apple-touch-icon" sizes="152x152" href="images/apple-touch-icon-152x152.png" />
 	<link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon-180x180.png" />
-	<title>Good Hosts! | Allergen-Free Recipes</title>
+	<title>Good Hosts ok | Allergen-Free Recipes</title>
 </head>
 <body>
 <!-- header begins -->
@@ -45,7 +46,7 @@
 				
 				<h2 class="stepOne"><span class="red">Step One:</span> Select any allergies that you or your guest(s) may have.</h2>
 				
-				<!-- <div class="allergyTypes">
+				<div class="allergyTypes">
 					
 					<div class="gluten allergySelection">
 						<img src="images/gluten.png" alt="Image of Gluten Crossed Out" data-id="gluten" class="allergyImage">
@@ -108,7 +109,7 @@
 	</div>
 </section>
 <!-- display results  -->
-<!-- <section class="displayResults">
+<section class="displayResults">
 	<div class="wrapper">
 		<div class="resultsContent">
 			<ul class="resultsUl">
@@ -123,13 +124,13 @@
 			</ul>
 		</div>
 	</div>
-</section> -->
+</section>
 </main>
 
 
 
 
-<style>
+<!-- <style>
 	
 body {background-color:#fff;}
 
@@ -167,14 +168,14 @@ body {background-color:#fff;}
 .yummilyBox {}
 
 
-</style>
+</style> -->
 
 
 
 
 
 
-	<!-- <link rel="import" href="http://www.yummly.com/recipe/Cookie-Dough-Dessert-1901812"> -->
+	<!-- <link rel="import" href="http://www.yummly.com/recipe/Cookie-Dough-Dessert-1901812">
 	<!-- <link rel="stylesheet" href="styles.css"> -->
 <!-- </head> -->
 <!-- <body class="ourClas"> -->
@@ -186,15 +187,54 @@ body {background-color:#fff;}
 	<div class="recipeListContainer" id="recipeListContainer"></div>
 	<div class="linktoYummily" id="linktoYummily">click here to read full directions</div>
 	</section>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-<script>
 
-$('<link[rel="import"]>').attr('href','http:\/\/www.yummly.com/recipe/Mac-and-Cheese-in-a-Mug_-850468');
 
-var link = document.querySelector('link[rel="import"]');
+<!-- <script>
+
+
+// var myNewLink = $('link[rel="import"]');
+
+// myNewLink.attr('href','http:\/\/www.yummly.com/recipe/Mac-and-Cheese-in-a-Mug_-850468');
+
+$('#yummlyImport').attr('href','http:\/\/www.yummly.com/recipe/Mac-and-Cheese-in-a-Mug_-850468');
+
+// myNewLink.attr('rel','[rel="import"]');
+
+// $("head").append(myNewLink);
+setTimeout(function(){
+// var link = document.querySelector('link[rel="import"]');
+
+var link = document.getElementById('yummlyImport');
+// var link =$('#yummlyImport2');
     var content = link.import;
-     // var el = content.querySelector('body');
-     // var el = content.querySelector('.recipe');
+     var recipeImage = content.querySelector('.recipe-details');
+     var summary = content.querySelector('.RecipeSummary');
+     var recipeList = content.querySelector('.recipe-ingredients');
+
+     recipeImageContainer.appendChild(recipeImage.cloneNode(true));
+     summaryBox.appendChild(summary.cloneNode(true));
+
+     recipeListContainer.appendChild(recipeList.cloneNode(true));
+     
+     
+
+     $('.units').hide();
+     $('.y-icon').hide();
+
+},3000);
+    
+
+
+setTimeout(function(){
+
+// $('#yummlyImport').attr('href','http:\/\/www.yummly.com/recipe/Mac-and-Cheese-in-a-Mug_-850468');
+$('#yummlyImport2').attr('href','http:\/\/www.yummly.com/recipe/Baked-Macaroni-and-Cheese-471277');
+
+
+setTimeout(function(){
+var link2 = document.getElementById('yummlyImport2');
+    var content = link2.import;
+   
      var recipeImage = content.querySelector('.recipe-details');
      var summary = content.querySelector('.RecipeSummary');
      // var finalLink = content.querySelector('.recipe-show-full-directions');
@@ -210,14 +250,11 @@ var link = document.querySelector('link[rel="import"]');
 
      $('.units').hide();
      $('.y-icon').hide();
+},4000);
 
+},4000);
 
-     // var linkaddy ="http://www.yummly.com/recipe/" + Id from api
-
-
-
-
-</script>
+</script> -->
 
 
 
