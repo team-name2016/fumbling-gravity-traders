@@ -11,6 +11,8 @@ header {
 }
 
 .headerContent {
+	position: relative;
+
 	h1 {
 		text-align: center;
 		letter-spacing: 2px;
@@ -65,12 +67,32 @@ header {
 	}
 }
 
-.hat {
-	width: 25px;
+.box{
+	height: 23px;
+	width: 23px;
+	z-index: 9;
+	position: absolute;
+	background-color: white;
+	top: 15px;
+	left: 93px;
+}
+
+.ki {
 	position: relative;
+	left: 20px;
+}
+
+.hat {
+	width: 26px;
+    position: relative;
+    bottom: 50px;
+    z-index: 10;
+    right: 10px;
 }
 
 .music {
-	width: 80px;
+	width: 53px;
 	position: relative;
+	top: 19px;
+	right: 3px;
 }

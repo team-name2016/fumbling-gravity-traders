@@ -152,7 +152,6 @@ allergyApp.specificRecipe = function(recipeId) {
 		allergyApp.totalTimeInSeconds = recipeData.totalTimeInSeconds;
 		$('object').attr('data',recipeData.source.sourceRecipeUrl);
 	});
-
 }
 
 
