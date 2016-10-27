@@ -11,6 +11,7 @@ h2.stepOne  {
 		letter-spacing: .5px;
 		line-height: 1.5;
 		margin-bottom: 55px;
+		font-weight: 400;
 		font-size: 2.4rem;
 	}
 
@@ -57,7 +58,7 @@ h2.stepOne  {
 
 			&::before {
 				content: '\f00c';
-				font-family: 'FontAwesome';
+				// font-family: 'FontAwesome';
 				color: $red;
 				position: absolute;
 				left: -1px;
@@ -366,13 +367,14 @@ color: lighten($black,20%) !important;
 	}
 }
 
-span.red {
-	color: $red;
+span.lightyellow {
+	color: $blue;
+	border-bottom: 3px solid $green;
 	margin-right: 3px;
 }
 
 span.here {
-	color: $red;
+	color: $lightyellow;
 }
 
 // MESSAGE WHEN NO RESULTS ARE FOUND //

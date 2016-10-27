@@ -1,5 +1,7 @@
 "use strict";
 
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 var allergyApp = {};
 
 // call api and return recipe info based on query search	
@@ -9,7 +11,13 @@ allergyApp.url = "http://api.yummly.com/v1/api/recipes?_app_id=";
 allergyApp.id = "cb509487";
 allergyApp.urlInitial = "" + allergyApp.url + allergyApp.id + "&_app_key=" + allergyApp.key;
 
+// allergyApp.urlSpecific =`http://api.yummly.com/v1/api/recipe/${recipeId}?_app_id=${allergyApp.id}&_app_key=${allergyApp.key}`
+
 // http://api.yummly.com/v1/api/recipe/recipe-id?_app_id=YOUR_ID&_app_key=YOUR_APP_KEY
+// 
+// 
+
+
 allergyApp.getRecipes = function (query, allAllergies) {
 	$.ajax({
 		url: allergyApp.urlInitial,
@@ -53,10 +61,42 @@ allergyApp.displayResults = function (results) {
 	var resultsId = results.id; //stores results id code
 	console.log(resultsId);
 
-	// $('.resultsUl').append('<li class="resultsLi"><div class="cardImage"><a href="http://www.yummly.com/recipe/'+resultsId+'" target="_blank"><img src="' + resultsImage + '" alt=""></a></div><div class="cardTitle"><a href="http://www.yummly.com/recipe/'+resultsId+'" target="_blank">' + resultsName + '</a></div><div class="resultTime"><i class="fa fa-clock-o" aria-hidden="true"></i> ' + resultsTime + ' mins</div><div class="resultId"><a href="http://www.yummly.com/recipe/'+resultsId+'" target="_blank">Click <span class="here">HERE</span> for full recipe</a></div></li>');
-	$('.resultsUl').append('<li class="resultsLi"><a href="http://www.yummly.com/recipe/' + resultsId + '" target="_blank">link</a></div></li>');
+	$('.resultsUl').append('<li class="resultsLi"><div class="cardImage"><a href="http://www.yummly.com/recipe/' + resultsId + '" target="_blank"><img src="' + resultsImage + '" alt=""></a></div><div class="cardTitle"><a href="http://www.yummly.com/recipe/' + resultsId + '" target="_blank">' + resultsName + '</a></div><div class="resultTime"><i class="fa fa-clock-o" aria-hidden="true"></i> ' + resultsTime + ' mins</div><div class="resultId"><a href="http://www.yummly.com/recipe/' + resultsId + '" target="_blank">Click <span class="here">HERE</span> for full recipe</a></div></li>');
+	// $('.resultsUl').append('<li class="resultsLi"><a href="http://www.yummly.com/recipe/'+resultsId+'" target="_blank">link</a></div></li>');
 	$('.resultsUl li').css('border', '1px solid red');
+	$('.resultsUl li a').on('click', function (e) {
+		var results = "Artisan-Bread-1905589";
+		e.preventDefault();
+		allergyApp.specificRecipe(results);
+	});
 };
+
+allergyApp.specificRecipe = function (recipeId) {
+	var _$$ajax;
+
+	$.ajax((_$$ajax = {
+		url: allergyApp.urlSpecific
+	}, _defineProperty(_$$ajax, "url", "http://api.yummly.com/v1/api/recipe/" + recipeId + "?_app_id=" + allergyApp.id + "&_app_key=" + allergyApp.key), _defineProperty(_$$ajax, "method", 'GET'), _defineProperty(_$$ajax, "dataType", 'json'), _defineProperty(_$$ajax, "data", {
+		requirePictures: true
+	}), _$$ajax)).then(function (recipeData) {
+		console.log('yo:' + recipeData);
+		// $('.resultsUl').html('');
+		// var filteredRecipes = recipeData.matches;
+		// console.log(filteredRecipes);
+
+		// for(i = 0; i < filteredRecipes.length; i++) {
+		// 	var searchResults = recipeData.matches[i];
+		// 	console.log(searchResults); // logs the search result of 10 recipes based on the user's search
+		// 	allergyApp.displayResults(searchResults)
+		// }
+
+		// if(filteredRecipes.length === 0) {
+		// 	$('.resultsContent').html('<h3 class="noResults">No Recipes Found <i class="fa fa-frown-o" aria-hidden="true"></i></h3><label for="recipeSearch" class="searchAgain">Search again</label>');
+	});
+};
+
+// };
+
 
 allergyApp.init = function () {
 	$('.allergyForm').on('submit', function (e) {
