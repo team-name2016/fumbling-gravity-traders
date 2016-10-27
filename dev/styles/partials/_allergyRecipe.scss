@@ -7,15 +7,14 @@
 
 .here {border:2px solid purple;}
 
-.objectTest {width:90%;
-			border:2px solid green;
+.objectTest {
+	// width:100%;
+			
 		object{width:100%;
-				border:1px solid goldenrod;}
+				height:500px;}
 		}
 
-.impBox {width:100%;
-	    height:400px;
-		border:1px solid red;}
+
 
 h2.stepOne  {
 		margin-left: 4%;
