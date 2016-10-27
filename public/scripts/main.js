@@ -120,6 +120,7 @@ allergyApp.specificRecipe = function (recipeId) {
 	}, _defineProperty(_$$ajax, "url", "http://api.yummly.com/v1/api/recipe/" + recipeId + "?_app_id=" + allergyApp.id + "&_app_key=" + allergyApp.key), _defineProperty(_$$ajax, "method", 'GET'), _defineProperty(_$$ajax, "dataType", 'json'), _defineProperty(_$$ajax, "data", {
 		requirePictures: true
 	}), _$$ajax)).then(function (recipeData) {
+<<<<<<< HEAD
 		// var itemName ={};
 		// var itemName = recipeData;
 		console.log('clyde');
@@ -136,11 +137,16 @@ allergyApp.specificRecipe = function (recipeId) {
 
 		// if(filteredRecipes.length === 0) {
 		// 	$('.resultsContent').html('<h3 class="noResults">No Recipes Found <i class="fa fa-frown-o" aria-hidden="true"></i></h3><label for="recipeSearch" class="searchAgain">Search again</label>');
+=======
+		console.log(recipeData);
+		// $('.resultsUl').empty();
+		$('.displayResults').addClass('disappear');
+		$('.objectTest').fadeIn();
+		allergyApp.totalTimeInSeconds = recipeData.totalTimeInSeconds;
+		$('object').attr('data', recipeData.source.sourceRecipeUrl);
+>>>>>>> 206b9c941b29716565616ee245267063545c8fea
 	});
 };
-
-// };
-
 
 allergyApp.init = function () {
 	$('.allergyForm').on('submit', function (e) {
