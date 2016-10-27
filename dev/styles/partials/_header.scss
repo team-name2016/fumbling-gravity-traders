@@ -2,7 +2,7 @@ header {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	margin: 25px auto 100px auto;
+	margin: 35px auto 100px auto;
 
 	@media all and (max-width: 730px) {
 		margin: 25px auto 70px auto;
@@ -12,12 +12,11 @@ header {
 
 .headerContent {
 	h1 {
-		font-family: 'Abril Fatface', cursive;
 		text-align: center;
 		letter-spacing: 2px;
-		color: $red;	
+		color: $blue;	
 		position: relative;
-		font-size: 13.0rem;
+		font-size: 10.5rem;
 
 		@media all and (max-width: 517px) {
 			font-size: 10.0rem;
@@ -64,4 +63,14 @@ header {
 			font-size: 1.8rem;
 		}
 	}
+}
+
+.hat {
+	width: 25px;
+	position: relative;
+}
+
+.music {
+	width: 80px;
+	position: relative;
 }

@@ -28,28 +28,46 @@ allergyApp.getRecipes = function (query, allAllergies) {
 			q: query,
 			allowedAllergy: allAllergies ? allAllergies : null
 		}
-	})
-	// .then(allergyApp.checkResults(recipeData));
-	.then(console.log(recipeData + "here now"));
-	// .then(function(recipeData) {
-	// 	$('.resultsUl').html('');
-	// 	var filteredRecipes = recipeData.matches;
-	// 	console.log(filteredRecipes);
+	}).then(function (recipeData) {
 
-	// 	for(i = 0; i < filteredRecipes.length; i++) {
-	// 		var searchResults = recipeData.matches[i];
-	// 		console.log(searchResults); // logs the search result of 10 recipes based on the user's search
-	// 		allergyApp.displayResults(searchResults)
-	// 	}
+		allergyApp.checkResults(recipeData);
 
-	// 	if(filteredRecipes.length === 0) {
-	// 		$('.resultsContent').html('<h3 class="noResults">No Recipes Found <i class="fa fa-frown-o" aria-hidden="true"></i></h3><label for="recipeSearch" class="searchAgain">Search again</label>');
-	// 	}
-	// });
+		// $('.resultsUl').html('');
+		// var filteredRecipes = recipeData.matches;
+		// console.log(filteredRecipes);
+
+		// for(i = 0; i < filteredRecipes.length; i++) {
+		// 	var searchResults = recipeData.matches[i];
+		// 	console.log(searchResults); // logs the search result of 10 recipes based on the user's search
+		// 	allergyApp.displayResults(searchResults)
+		// }
+
+		// if(filteredRecipes.length === 0) {
+		// 	$('.resultsContent').html('<h3 class="noResults">No Recipes Found <i class="fa fa-frown-o" aria-hidden="true"></i></h3><label for="recipeSearch" class="searchAgain">Search again</label>');
+		// }
+	});
 };
 
+// allergyApp.checkResults = function(recipeData){
+// 	console.log('here we are' + recipeData);
+// 	$('.resultsUl').html('');
+// 		var filteredRecipes = recipeData.matches;
+// 		console.log(filteredRecipes);
+
+// 		for(i = 0; i < filteredRecipes.length; i++) {
+// 			var searchResults = recipeData.matches[i];
+// 			console.log(searchResults); // logs the search result of 10 recipes based on the user's search
+// 			allergyApp.displayResults(searchResults)
+// 		}
+
+// 		if(filteredRecipes.length === 0) {
+// 			$('.resultsContent').html('<h3 class="noResults">No Recipes Found <i class="fa fa-frown-o" aria-hidden="true"></i></h3><label for="recipeSearch" class="searchAgain">Search again</label>');
+// 		}
+
+// }
+
+
 allergyApp.checkResults = function (recipeData) {
-	console.log('here we are' + recipeData);
 	$('.resultsUl').html('');
 	var filteredRecipes = recipeData.matches;
 	console.log(filteredRecipes);
@@ -63,6 +81,16 @@ allergyApp.checkResults = function (recipeData) {
 	if (filteredRecipes.length === 0) {
 		$('.resultsContent').html('<h3 class="noResults">No Recipes Found <i class="fa fa-frown-o" aria-hidden="true"></i></h3><label for="recipeSearch" class="searchAgain">Search again</label>');
 	}
+
+	$('.resultsUl li').on('click', function (e) {
+		e.preventDefault();
+		// var choice = $(this).data("data-id");
+
+		// var choice = jquery.data($(this),"data-id");
+		var choice = $(this).data("id");
+		// console.log("here:"+choice);
+		allergyApp.specificRecipe(choice);
+	});
 };
 
 // Display search results on the page
@@ -81,14 +109,7 @@ allergyApp.displayResults = function (results) {
 	var resultsId = results.id; //stores results id code
 	console.log(resultsId);
 
-	$('.resultsUl').append('<li class="resultsLi"><div class="cardImage"><a href="http://www.yummly.com/recipe/' + resultsId + '" target="_blank"><img src="' + resultsImage + '" alt=""></a></div><div class="cardTitle"><a href="http://www.yummly.com/recipe/' + resultsId + '" target="_blank">' + resultsName + '</a></div><div class="resultTime"><i class="fa fa-clock-o" aria-hidden="true"></i> ' + resultsTime + ' mins</div><div class="resultId"><a href="http://www.yummly.com/recipe/' + resultsId + '" target="_blank">Click <span class="here">HERE</span> for full recipe</a></div></li>');
-	// $('.resultsUl').append('<li class="resultsLi"><a href="http://www.yummly.com/recipe/'+resultsId+'" target="_blank">link</a></div></li>');
-	$('.resultsUl li').css('border', '1px solid red');
-	$('.resultsUl li a').on('click', function (e) {
-		var results = "Artisan-Bread-1905589";
-		e.preventDefault();
-		allergyApp.specificRecipe(results);
-	});
+	$('.resultsUl').append('<li class="resultsLi" data-id="' + resultsId + '"><div class="cardImage"><img src="' + resultsImage + '" alt=""></div><div class="cardTitle"></div><div class="resultTime"><i class="fa fa-clock-o" aria-hidden="true"></i> ' + resultsTime + ' mins</div><div class="resultId"></div></li>');
 };
 
 allergyApp.specificRecipe = function (recipeId) {
