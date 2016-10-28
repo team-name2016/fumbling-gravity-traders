@@ -124,6 +124,7 @@ allergyApp.specificRecipe = function (recipeId) {
 		// $('.resultsUl').empty();
 		$('.displayResults').addClass('disappear');
 		$('.objectTest').fadeIn();
+		$('body').addClass('fixed');
 		allergyApp.totalTimeInSeconds = recipeData.totalTimeInSeconds;
 		$('object').attr('data', recipeData.source.sourceRecipeUrl);
 	});
