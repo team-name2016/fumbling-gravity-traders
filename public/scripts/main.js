@@ -161,8 +161,8 @@ allergyApp.init = function () {
 		$('html, body').animate({
 			scrollTop: $('.displayResults').offset().top
 		}, 1150);
-		var chosenRecipes = $('input[type=text]').val();
-		console.log(chosenRecipes);
+		var chosenRecipes = $('#recipeSearch').val();
+		console.log("clyde:-----" + chosenRecipes);
 
 		var chosenAllergies = $('input[type=checkbox]:checked');
 		var allAllergies = $.map(chosenAllergies, function ($allergy, index) {
@@ -236,12 +236,6 @@ spotApp.init = function () {
 timerPlugIn.init = function () {
 	timerPlugIn.setClock();
 };
-
-// DOCUMENT READY ---------------------------------------
-
-
-// ****************
-
 
 // Doc ready, run init
 $(function () {
