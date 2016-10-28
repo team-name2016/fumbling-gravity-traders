@@ -1,3 +1,31 @@
+var timerPlugIn = {};
+
+timerPlugIn.setClock = function(){
+
+		var time = +('2000');
+		var clock = $('.your-clock').FlipClock(time, {
+			clockFace: 'MinuteCounter',
+			autoStart: false,
+			countdown: true
+		});
+		$('#startTimer').on('click', function(totalTimeInSeconds) {
+			var clock = $('.your-clock').FlipClock(totalTimeInSeconds, {
+				clockFace: 'MinuteCounter',
+				autoStart: true,
+				countdown: true
+			});
+		});
+		
+		// var event = clock.on('click' function() {
+			
+		// 	// This code will trigger every time this event is triggered.
+		// });
+	    console.log( "ready!" );
+	}
+
+
+
+
 var allergyApp = {};
 
 // call api and return recipe info based on query search	
@@ -249,6 +277,11 @@ spotApp.init= function(){
 };
 
 
+timerPlugIn.init = function(){
+timerPlugIn.setClock();
+};
+
+
 // DOCUMENT READY ---------------------------------------
 
 
@@ -262,6 +295,7 @@ spotApp.init= function(){
 
 // Doc ready, run init
 $(function() {
+	timerPlugIn.init();
 	allergyApp.init();
 	spotApp.init();
 });
