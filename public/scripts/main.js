@@ -27,6 +27,37 @@ timerPlugIn.setClock = function () {
 	console.log("ready!");
 };
 
+var screenChange = {};
+
+screenChange.hideSections = function () {
+	$('#yummlySection').hide();
+	$('#displaySection').hide();
+	$('#timerSection').hide();
+	// $('#playlistSection').hide();
+
+	console.log("I AM READY TO HIDE THINGS!");
+};
+
+screenChange.showSections = function () {
+	$('#spotifySubmit').on('click', function (e) {
+		e.preventDefault();
+		$('#spotifySection').hide();
+		$('#yummlySection').fadeIn();
+	});
+
+	$('#recipeSubmit').on('click', function (e) {
+		e.preventDefault();
+		$('#yummlySection').hide();
+		$('#displaySection').fadeIn();
+	});
+
+	$('#searchAgainSubmit').on('click', function (e) {
+		location.reload();
+	});
+
+	console.log("I AM READY TO SHOW SECTIONS!");
+};
+
 var yummlyApp = {};
 
 // call api and return recipe info based on query search	
@@ -149,9 +180,9 @@ var spotApp = {};
 
 spotApp.getSomething = function () {
 	var spotURL = "https://api.spotify.com/v1/search";
-	$('form').on('submit', function (e) {
+	$('button').on('click', function (e) {
 		e.preventDefault();
-		var searchQuery = $('#saySomething').val();
+		var searchQuery = $('.musicType').val();
 		$.ajax({
 			url: spotURL,
 			method: 'GET',
@@ -194,9 +225,15 @@ timerPlugIn.init = function () {
 	timerPlugIn.setClock();
 };
 
+screenChange.init = function () {
+	screenChange.hideSections();
+	screenChange.showSections();
+};
+
 // Doc ready, run init
 $(function () {
 	timerPlugIn.init();
 	yummlyApp.init();
 	spotApp.init();
+	screenChange.init();
 });
