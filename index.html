@@ -22,6 +22,53 @@
 <body>
 <!-- header begins -->
 <header>
+	<div class="wrapper">
+		<div class="headerContent">
+			<h1>Kitchen Tunes</h1>
+		</div>
+	</div>	
+</header>
+
+<main>
+<section class="allergyRecipe">
+	<div class="wrapper chooseContent">
+		<form action="" class="allergyForm">
+			<div class="searchRecipe">
+				<h2 class="stepTwo">Step Two: Search for a recipe below.</h2>
+				<!-- search for a recipe -->
+				<input type="text" id="recipeSearch" placeholder="What do you want to make?" required="true" onfocus="this.placeholder = ''" onblur="this.placeholder = 'What do you want to make?'">
+			</div>
+			<input type="submit" value="Find Your Recipe" id="recipeSubmit">
+		</form>
+	</div>
+</section>
+</main>
+
+<!-- display results  -->
+<section class="displayResults">
+	<div class="wrapper resultsContent">
+		<ul class="resultsUl">
+			<li class="resultsLi">
+				<div class="cardImage">
+				</div>
+			</li>
+		</ul>
+	</div>
+</section>
+
+<div class="objectTest animated fadeInDownBig wrapper">
+	<object type="text/html"></object>
+</div>
+
+
+<!-- Yummly link? -->
+<!-- 	<section class="yummilyBox">
+		<div class="recipeImageContainer" id="recipeImageContainer"></div>
+		<div class="summaryBox" id="summaryBox"></div>
+		<div class="recipeListContainer" id="recipeListContainer"></div>
+		<div class="linktoYummily" id="linktoYummily">click here to read full directions</div>
+	</section> -->
+
 
 <div class="your-clock">
 </div>
@@ -42,198 +89,6 @@
 			<!-- <h2>Allergies suck, these recipes don't.</h2> -->
 		</div>
 	</div>	
-</header>
-<main>
-<section class="allergyRecipe">
-	<div class="wrapper chooseContent">
-		<form action="" class="allergyForm">
-			<div class="searchRecipe">
-				<h2 class="stepTwo">Step Two: Search for a recipe below.</h2>
-				<!-- search for a recipe -->
-				<input type="text" id="recipeSearch" placeholder="What do you want to make?" required="true" onfocus="this.placeholder = ''" onblur="this.placeholder = 'What do you want to make?'">
-			</div>
-			<input type="submit" value="Find Your Recipe" id="recipeSubmit">
-		</form>
-	</div>
-</section>
-</main>
-
-<!-- display results  -->
-<section class="displayResults">
-	<div class="wrapper">
-		<div class="resultsContent">
-			<ul class="resultsUl">
-				<li class="resultsLi">
-					<div class="cardImage">
-
-					</div>
-
-				</li>
-
-			</ul>
-		</div>
-	</div>
-</section>
-<div class="objectTest animated fadeInDownBig">
-<object type="text/html"></object>
-</div>
-
-</div>
-
-<!-- <style>
-	
-body {background-color:#fff;}
-
-.recipeImageContainer {width:100%;
-			
-			
-			margin:0 auto;
-			overflow:hidden;}
-
-.summaryBox {width:100%;
-			margin:1rem auto;}
-
-.recipeListContainer {width:100%;
-		
-		/*height:50px;*/
-		margin:4rem auto;
-		}
-
-.linktoYummily {
-				background-color:#E16120;
-				width:100%;
-				padding:2rem;
-				text-align:center;
-				color:#fff;
-				font-size: 2rem;
-				/*position:fixed;*/
-				bottom:0;
-				margin:0 auto;}
-
-/*yummly dom elements*/
-
-.primary-info {padding-left:.5rem;} 
-
-
-.yummilyBox {}
-
-
-</style> -->
-
-
-
-
-
-
-	<!-- <link rel="import" href="http://www.yummly.com/recipe/Cookie-Dough-Dessert-1901812">
-	<!-- <link rel="stylesheet" href="styles.css"> -->
-<!-- </head> -->
-<!-- <body class="ourClas"> -->
-	<!-- <h1>Spotify Controls</h1> -->
-	<!-- <p>Login Info</p> -->
-	<section class="yummilyBox">
-	<div class="recipeImageContainer" id="recipeImageContainer"></div>
-	<div class="summaryBox" id="summaryBox"></div>
-	<div class="recipeListContainer" id="recipeListContainer"></div>
-	<div class="linktoYummily" id="linktoYummily">click here to read full directions</div>
-	</section>
-
-
-<script>
-
-
-// var myNewLink = $('link[rel="import"]');
-
-// myNewLink.attr('href','http:\/\/www.yummly.com/recipe/Mac-and-Cheese-in-a-Mug_-850468');
-
-// $('#yummlyImport').attr('href','http:\/\/www.yummly.com/recipe/Mac-and-Cheese-in-a-Mug_-850468');
-
-// myNewLink.attr('rel','[rel="import"]');
-
-// $("head").append(myNewLink);
-// setTimeout(function(){
-
-
-// var link = document.querySelector('link[rel="import"]');
-
-// // var link = document.getElementById('yummlyImport');
-// // var link =$('#yummlyImport2');
-//     var content = link.import;
-//      // var recipeImage = content.querySelector('.recipe-details');
-//      // var summary = content.querySelector('.RecipeSummary');
-//      // var recipeList = content.querySelector('.recipe-ingredients');
-//      var total = content.querySelector('html');
-
-//      impBox.appendChild(total.cloneNode(true));
-//      // summaryBox.appendChild(summary.cloneNode(true));
-
-//      // recipeListContainer.appendChild(recipeList.cloneNode(true));
-     
-     
-
-//      // $('.units').hide();
-//      // $('.y-icon').hide();
-
-// },19000);
-    
-
-
-// setTimeout(function(){
-
-// // $('#yummlyImport').attr('href','http:\/\/www.yummly.com/recipe/Mac-and-Cheese-in-a-Mug_-850468');
-// $('#yummlyImport2').attr('href','http:\/\/www.yummly.com/recipe/Baked-Macaroni-and-Cheese-471277');
-
-
-// setTimeout(function(){
-// var link2 = document.getElementById('yummlyImport2');
-//     var content = link2.import;
-   
-//      var recipeImage = content.querySelector('.recipe-details');
-//      var summary = content.querySelector('.RecipeSummary');
-//      // var finalLink = content.querySelector('.recipe-show-full-directions');
-
-//      var recipeList = content.querySelector('.recipe-ingredients');
-
-//      recipeImageContainer.appendChild(recipeImage.cloneNode(true));
-//      summaryBox.appendChild(summary.cloneNode(true));
-
-//      recipeListContainer.appendChild(recipeList.cloneNode(true));
-     
-//      // finalBox.appendChild(finalLink.cloneNode(true));
-
-//      $('.units').hide();
-//      $('.y-icon').hide();
-// },4000);
-
-// },4000);
-
-</script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- footer begins -->
-<!-- <footer>
-	<div class="wrapper">
-		<div class="footerContent">
-			<div class="footerLeft">
-				<p>Created by <a href="http://adamfeldman.io" target="_blank">Adam Feldman</a><a href="http://twitter.com/_adamfeldman" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></p>
-			</div>
-			<div class="footerRight">
-				<p>Powered by <a href="http://yummly.com" target="_blank">Yummly</a> // Icons by <a href="https://thenounproject.com/" target="_blank">The Noun Project</a></p>
-			</div>
-		</div>
-	</div>	
-</footer> -->
 
 <!-- scripts begin -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
