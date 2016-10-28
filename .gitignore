@@ -2,5 +2,5 @@
 *.css.map
 DS_Store
 public/styles
-public/scripts
+public/scripts/main.js
 node_modules
