@@ -1,0 +1,12 @@
+.playlistOptions {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content:space-around;
+	button {
+		background-color: transparent;
+		padding: 3% 5%;
+		width: 20%;
+
+	}
+}
