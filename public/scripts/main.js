@@ -1,6 +1,31 @@
-"use strict";
+'use strict';
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+var timerPlugIn = {};
+
+timerPlugIn.setClock = function () {
+
+	var time = +'2000';
+	var clock = $('.your-clock').FlipClock(time, {
+		clockFace: 'MinuteCounter',
+		autoStart: false,
+		countdown: true
+	});
+	$('#startTimer').on('click', function (totalTimeInSeconds) {
+		var clock = $('.your-clock').FlipClock(totalTimeInSeconds, {
+			clockFace: 'MinuteCounter',
+			autoStart: true,
+			countdown: true
+		});
+	});
+
+	// var event = clock.on('click' function() {
+
+	// 	// This code will trigger every time this event is triggered.
+	// });
+	console.log("ready!");
+};
 
 var allergyApp = {};
 
@@ -9,7 +34,7 @@ var allergyApp = {};
 allergyApp.key = "d64bdf3253f0c38225e7761cfa1151ef";
 allergyApp.url = "http://api.yummly.com/v1/api/recipes?_app_id=";
 allergyApp.id = "cb509487";
-allergyApp.urlInitial = "" + allergyApp.url + allergyApp.id + "&_app_key=" + allergyApp.key;
+allergyApp.urlInitial = '' + allergyApp.url + allergyApp.id + '&_app_key=' + allergyApp.key;
 
 // allergyApp.urlSpecific =`http://api.yummly.com/v1/api/recipe/${recipeId}?_app_id=${allergyApp.id}&_app_key=${allergyApp.key}`
 
@@ -117,7 +142,7 @@ allergyApp.specificRecipe = function (recipeId) {
 
 	$.ajax((_$$ajax = {
 		url: allergyApp.urlSpecific
-	}, _defineProperty(_$$ajax, "url", "http://api.yummly.com/v1/api/recipe/" + recipeId + "?_app_id=" + allergyApp.id + "&_app_key=" + allergyApp.key), _defineProperty(_$$ajax, "method", 'GET'), _defineProperty(_$$ajax, "dataType", 'json'), _defineProperty(_$$ajax, "data", {
+	}, _defineProperty(_$$ajax, 'url', 'http://api.yummly.com/v1/api/recipe/' + recipeId + '?_app_id=' + allergyApp.id + '&_app_key=' + allergyApp.key), _defineProperty(_$$ajax, 'method', 'GET'), _defineProperty(_$$ajax, 'dataType', 'json'), _defineProperty(_$$ajax, 'data', {
 		requirePictures: true
 	}), _$$ajax)).then(function (recipeData) {
 		console.log(recipeData);
@@ -208,6 +233,10 @@ spotApp.init = function () {
 	spotApp.getSomething();
 };
 
+timerPlugIn.init = function () {
+	timerPlugIn.setClock();
+};
+
 // DOCUMENT READY ---------------------------------------
 
 
@@ -216,6 +245,7 @@ spotApp.init = function () {
 
 // Doc ready, run init
 $(function () {
+	timerPlugIn.init();
 	allergyApp.init();
 	spotApp.init();
 });
