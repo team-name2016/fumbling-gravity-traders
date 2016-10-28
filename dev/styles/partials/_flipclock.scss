@@ -1,5 +1,8 @@
 /* Get the bourbon mixin from http://bourbon.io */
 /* Reset */
+
+$colorOrange :rgba(225,97,32,.7);
+
 .flip-clock-wrapper * {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -156,7 +159,7 @@
   color: #ccc;
   text-shadow: 0 1px 2px #000;
   text-align: center;
-  background-color: #333;
+  background-color: $colorOrange;
   border-radius: 6px;
   font-size: 70px; }
 
