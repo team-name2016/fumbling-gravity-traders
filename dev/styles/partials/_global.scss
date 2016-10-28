@@ -31,6 +31,24 @@ main {
 	border: 2px double white;
 }
 
+
+section {
+	// For dev purposes ONLY!
+	border: 2px solid red;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	justify-content: space-between;
+	margin: 3% auto;
+
+} 
+
+form{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
 h1 {
 	text-align: center;
 	letter-spacing: 2px;

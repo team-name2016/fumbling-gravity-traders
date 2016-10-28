@@ -1,0 +1,92 @@
+#recipeSearch {
+		width: 100%;
+		border: none;
+		border-bottom: 3px solid white;
+		letter-spacing: .5px;
+		background-color: transparent;
+		font-size: 2.3rem;
+		padding-top: 5%;
+		color: white;
+
+		&::-webkit-input-placeholder {
+		color: white !important;
+		}
+		 
+		&:-moz-placeholder { /* Firefox 18- */
+		color: white !important;  
+		}
+		 
+		&::-moz-placeholder {  /* Firefox 19+ */
+		color: white !important;  
+		}
+		 
+		&:-ms-input-placeholder {  
+		color: white !important;  
+		}
+
+
+
+		@media all and (max-width: 488px) {
+			font-size: 2.15rem;
+		}
+
+		@media all and (max-width: 400px) {
+			font-size: 2.1rem;
+		}
+
+		&:focus {
+			outline: none;
+		}
+
+		//Keeps background color of text input after Chrome autofill//
+		&:-webkit-autofill {
+			-webkit-box-shadow: 0 0 0px 1000px white inset;
+		}	
+}
+
+input[type='submit'] {
+	padding: 2% 5%;
+	width: 100%;
+	text-transform: uppercase;
+	margin: 2% auto;
+	background-color: $green;
+	border: 2px solid $green;
+	border-radius: 4px;
+	color: white;
+	transition: all .3s;
+	letter-spacing: .5px;
+	font-size: 1.8rem;
+
+	@media all and (max-width: 588px) {
+		
+	}
+
+	@media all and (max-width: 400px) {
+		
+	}
+
+	&:hover {
+		background-color: lighten($green,8%);
+		border: 2px solid lighten($green,8%);
+	}
+
+	&:focus {
+		outline: none;
+	}
+}
+
+// input::-webkit-input-placeholder {
+// color: lighten($black,20%) !important;
+// }
+ 
+// input:-moz-placeholder { /* Firefox 18- */
+// color: lighten($black,20%) !important;  
+// }
+ 
+// input::-moz-placeholder {  /* Firefox 19+ */
+// color: lighten($black,20%) !important;  
+// }
+ 
+// input:-ms-input-placeholder {  
+// color: lighten($black,20%) !important;  
+// }
