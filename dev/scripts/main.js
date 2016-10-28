@@ -26,7 +26,7 @@ timerPlugIn.setClock = function(){
 
 
 
-var allergyApp = {};
+var yummlyApp = {};
 
 // call api and return recipe info based on query search	
 // 
@@ -118,7 +118,9 @@ yummlyApp.specificRecipe = function(recipeId) {
 		$('.displayResults').addClass('disappear');
 		$('.objectTest').fadeIn();
 		$('body').addClass('fixed');
-		allergyApp.totalTimeInSeconds = recipeData.totalTimeInSeconds;
+		yummlyApp
+
+.totalTimeInSeconds = recipeData.totalTimeInSeconds;
 		$('object').attr('data',recipeData.source.sourceRecipeUrl);
 	});
 }
@@ -127,8 +129,8 @@ yummlyApp.specificRecipe = function(recipeId) {
 
 
 
-allergyApp.init = function() {
-	$('.allergyForm').on('submit', function(e) {
+yummlyApp.init = function() {
+	$('.yummlyForm').on('submit', function(e) {
 		e.preventDefault();
 		$('html, body').animate({
 		        scrollTop: $('.displayResults').offset().top
@@ -136,16 +138,18 @@ allergyApp.init = function() {
 		var chosenRecipes = $('#recipeSearch').val();
 		console.log("clyde:-----"+chosenRecipes);
 		var chosenAllergies = $('input[type=checkbox]:checked');
-		var allAllergies = $.map(chosenAllergies, function($allergy, index) {
-			return $allergy.value;
+		var allAllergies = $.map(chosenAllergies, function($yummly, index) {
+			return $yummly.value;
 			console.log(chosenAllergies);
 			$('.resultsLi').css('border','200px solid orange');
 		});
 	// use value of type of food as parameter for query	
-		allergyApp.getRecipes(chosenRecipes, allAllergies);
+		yummlyApp
+
+.getRecipes(chosenRecipes, allAllergies);
 		console.log(chosenRecipes);
 	});	
-	$('.allergyImage').on('click', function() {
+	$('.yummlyImage').on('click', function() {
 		var checkbox = $(this).next();
 		var isChecked = checkbox.prop('checked');
 		checkbox.prop('checked', !isChecked);
@@ -222,7 +226,8 @@ timerPlugIn.setClock();
 // Doc ready, run init
 $(function() {
 	timerPlugIn.init();
-	allergyApp.init();
+	yummlyApp
+.init();
 	spotApp.init();
 });
 
