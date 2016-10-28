@@ -24,13 +24,13 @@
 <header>
 	<div class="wrapper">
 		<div class="headerContent">
-			<h1>Kitchen Tunes</h1>
+			<h1>Kitchen</h1>
 		</div>
 	</div>	
 </header>
 
 <main>
-<section class="yummlyRecipe">
+<section class="yummlyRecipe" id="yummlySection">
 	<div class="wrapper chooseContent">
 		<form action="" class="yummlyForm">
 			<div class="searchRecipe">
@@ -45,7 +45,7 @@
 
 
 <!-- display results  -->
-<section class="displayResults">
+<section class="displayResults" id="displaySection">
 
 	<div class="wrapper resultsContent">
 	<!-- FOR DEV PURPOSES ONLY! -->
@@ -56,6 +56,7 @@
 				</div>
 			</li>
 		</ul>
+		<input type="submit" value="Search Again!" id="searchAgainSubmit">
 	</div>
 </section>
 
@@ -63,18 +64,19 @@
 	<object type="text/html"></object>
 </div>
 
-<section class="playlistOptions">
-	<button class="musicType">Country</button>
-	<button class="musicType">Rock</button>
-	<button class="musicType">Party</button>
-	<button class="musicType">Soul</button>
-	<button class="musicType">Disco</button>
-	<button class="musicType">Indie</button>
-	<button class="musicType">Vaporwave</button>
-	<button class="musicType">Acoustic</button>
-	<button class="musicType">Reggae</button>
+<section class="playlistOptions" id="playlistSection">
+	<h2>What Do You Want To Hear?</h2>
+    <button class="musicType" value="Country">Country</button>
+    <button class="musicType" value="Rock">Rock</button>
+    <button class="musicType" value="Party">Party</button>
+    <button class="musicType" value="Soul">Soul</button>
+    <button class="musicType" value="Disco">Disco</button>
+    <button class="musicType" value="Indie">Indie</button>
+    <button class="musicType" value="Vaporwave">Vaporwave</button>
+    <button class="musicType" value="Acoustic">Acoustic</button>
+    <button class="musicType" value="Reggae">Reggae</button>
 </section>
-<section class="spotify">
+<section class="spotify" id="spotifySection">
 	<form action="">
 		<input type="text" value="party" id="spotifySearch">
 		<input type="submit" value="Search" id="spotifySubmit">
@@ -83,7 +85,7 @@
 	</div>
 </section>
 
-<section class="timer">
+<section class="timer" id="timerSection">
 	<div class="your-clock">
 	</div>
 	<button id="timer">START TIMER</button>
