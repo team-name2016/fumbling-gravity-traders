@@ -2,9 +2,9 @@ var spotApp= {};
 
 spotApp.getSomething= function(){
 	var spotURL= "https://api.spotify.com/v1/search";
-	$('form').on('submit', function(e){
+	$('button').on('click', function(e){
 		e.preventDefault();
-		var searchQuery = $('#saySomething').val();
+		var searchQuery = $('.party').val();
 		$.ajax({
 			url: spotURL,
 			method: 'GET',
