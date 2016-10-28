@@ -262,19 +262,23 @@ color: lighten($black,20%) !important;
 
 /////////// results begins ////////////
 .resultsUl {
-	display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-top: 30px;
+	// display: flex;
+ //    justify-content: center;
+ //    flex-wrap: wrap;
+ //    margin-top: 30px;
+ //    border:10px solid red!important;
+	// width:100%;
 }
+
+.resultsContent {border:1px solid purple}
 
 .resultsLi {
 	display: inline-block;
 	// border: 4px double lighten($black,7%);
 	border-radius: 3px;
-	padding: 1.5%;
-	margin: 28px;
-	width: 40%;
+	// padding: 1.5%;
+	// margin: 28px;
+	width: 33.3%;
 	min-width: 250px;
 
 	@media all and (max-width: 713px) {
