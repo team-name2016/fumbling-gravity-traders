@@ -29,23 +29,27 @@ screenChange.hideSections = function() {
 	$('#yummlySection').hide();
 	$('#displaySection').hide();
 	$('#timerSection').hide();
+	$('#externalRecipe').hide();
 	// $('#playlistSection').hide();
 
 	console.log("I AM READY TO HIDE THINGS!");
 }
 
 screenChange.showSections = function() {
-	$('#spotifySubmit').on('click',function(e) {
+	$('.musicType').on('click',function(e) {
 		e.preventDefault();
+		$('#playlistOptions').hide();
 		$('#spotifySection').hide();
 		$('#yummlySection').fadeIn();
-	});
-
-	$('#recipeSubmit').on('click',function(e) {
-		e.preventDefault();
-		$('#yummlySection').hide();
 		$('#displaySection').fadeIn();
 	});
+
+	// $('#recipeSubmit').on('click',function(e) {
+	// 	console.log('I work?');
+	// 	e.preventDefault();
+	// 	$('#yummlySection').hide();
+	// 	$('#displaySection').show();
+	// });
 
 	$('#searchAgainSubmit').on('click',function(e) {
 		location.reload();
@@ -127,6 +131,7 @@ yummlyApp.displayResults = function(results) {
 
 	var resultsId = results.id; //stores results id code
 	console.log(resultsId);
+
 
 	$('.resultsUl').append('<li class="resultsLi" data-id="'+resultsId+'"><div class="cardImage"><img src="' + resultsImage + '" alt=""></div><div class="cardTitle"></div><div class="resultTime"><i class="fa fa-clock-o" aria-hidden="true"></i> ' + resultsTime + ' mins</div><div class="resultId"></div></li>');
 }
