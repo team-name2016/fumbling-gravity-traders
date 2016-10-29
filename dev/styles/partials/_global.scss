@@ -34,7 +34,7 @@ main {
 
 section {
 	// For dev purposes ONLY!
-	border: 2px solid red;
+	// border: 2px solid red;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -51,7 +51,7 @@ form{
 h1 {
 	text-align: center;
 	letter-spacing: 2px;
-	font-size: 10.5rem;
+	font-size: 9rem;
 
 	@media all and (max-width: 517px) {
 		font-size: 10.0rem;

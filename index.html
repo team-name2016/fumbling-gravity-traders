@@ -24,7 +24,7 @@
 <header>
 	<div class="wrapper">
 		<div class="headerContent">
-			<h1>Kitchen</h1>
+			<h1>Kitchen Tunes</h1>
 		</div>
 	</div>	
 </header>
@@ -36,6 +36,18 @@
 <!-- back button 2 -->
 <button class="backButton2 back"><i class="fa fa-arrow-left" aria-hidden="true"></i> BACK</button>
 
+<section class="playlistOptions" id="playlistSection">
+	<h2>What Do You Want To Hear?</h2>
+    <button class="musicType" value="Country">Country</button>
+    <button class="musicType" value="Rock">Rock</button>
+    <button class="musicType" value="Party">Party</button>
+    <button class="musicType" value="Soul">Soul</button>
+    <button class="musicType" value="Disco">Disco</button>
+    <button class="musicType" value="Indie">Indie</button>
+    <button class="musicType" value="Vaporwave">Vaporwave</button>
+    <button class="musicType" value="Acoustic">Acoustic</button>
+    <button class="musicType" value="Reggae">Reggae</button>
+</section>
 
 <section class="yummlyRecipe" id="yummlySection">
 	<div class="wrapper chooseContent">
@@ -67,33 +79,24 @@
 	</div>
 </section>
 
-<section class="externalRecipe" id="externalRecipeSection">
+<section class="externalRecipe" id="externalRecipe">
 <div class="objectTest animated fadeInDownBig wrapper">
-	<object type="text/html"></object>
+		<div class="close" id="close">
+		<span></span>
+	</div>
+	<div class="toggle" id="toggle">
+		<span></span>
+	</div> 
+	<object type="text/html" id="externalSite"></object>
 </div>
 </section>
-
-<section class="playlistOptions" id="playlistSection">
-	<h2>What Do You Want To Hear?</h2>
-    <button class="musicType" value="Country">Country</button>
-    <button class="musicType" value="Rock">Rock</button>
-    <button class="musicType" value="Party">Party</button>
-    <button class="musicType" value="Soul">Soul</button>
-    <button class="musicType" value="Disco">Disco</button>
-    <button class="musicType" value="Indie">Indie</button>
-    <button class="musicType" value="Vaporwave">Vaporwave</button>
-    <button class="musicType" value="Acoustic">Acoustic</button>
-    <button class="musicType" value="Reggae">Reggae</button>
-</section>
-<section class="spotify" id="spotifySection">
-		<div class="spotify">
+<section class="sidebar" id="sidebar">
+	<div class="spotify">
 	</div>
-</section>
-
-<section class="timer" id="timerSection">
+	<div id="closeSidebar" class="close"><span></span></div>
 	<div class="your-clock">
 	</div>
-	<button id="timer">START TIMER</button>
+		<button id="timer">START TIMER</button>
 </section>
 </main>
 <!-- scripts begin -->
