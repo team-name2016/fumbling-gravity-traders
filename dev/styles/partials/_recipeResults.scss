@@ -1,7 +1,15 @@
 .displayResults {
 	display: flex;
 	flex-direction: row;
+	.resultsUl{
+		display: flex;
+		flex-wrap: wrap;
 	.resultsLi {
-		width: 30%;
+		width: 18%;
+		margin: 1%;
+		img{
+			width:100%;
+		}
 	}
+}
 }
