@@ -30,11 +30,15 @@ timerPlugIn.setClock = function () {
 var screenChange = {};
 
 screenChange.hideSections = function () {
+<<<<<<< HEAD
 	$('#yummlySection').hide();
 	$('#displaySection').hide();
 	$('#timerSection').hide();
 	$('#externalRecipe').hide();
 	// $('#playlistSection').hide();
+=======
+	$('#yummlySection, #displaySection, #timerSection, .backButton, .backButton2, #externalRecipe, #spotifySection').hide();
+>>>>>>> 82cb6b79260981c0779cba243251ffc605c0e77b
 
 	console.log("I AM READY TO HIDE THINGS!");
 };
@@ -42,6 +46,7 @@ screenChange.hideSections = function () {
 screenChange.showSections = function () {
 	$('.musicType').on('click', function (e) {
 		e.preventDefault();
+<<<<<<< HEAD
 		$('#playlistOptions').hide();
 		$('#spotifySection').hide();
 		$('#yummlySection').fadeIn();
@@ -53,6 +58,37 @@ screenChange.showSections = function () {
 	// 	e.preventDefault();
 	// 	$('#yummlySection').hide();
 	// 	$('#displaySection').show();
+=======
+		$('#playlistSection').hide();
+		$('#yummlySection').fadeIn();
+		$('.backButton').fadeIn();
+	});
+
+	$('.backButton').on('click', function () {
+		$('#playlistSection').fadeIn();
+		$('#yummlySection').hide();
+		$('.backButton').hide();
+	});
+
+	$('.backButton2').on('click', function () {
+		$('#yummlySection').fadeIn();
+		$('#displaySection').hide();
+		$('.backButton').fadeIn();
+		$('.backButton2').hide();
+	});
+
+	$('#spotifySubmit').on('click', function (e) {
+		e.preventDefault();
+		$('#spotifySection').hide();
+		$('#yummlySection').fadeIn();
+	});
+
+	// $('#recipeSubmit').on('click',function(e) {
+	// 	e.preventDefault();
+	// 	$('#yummlySection').hide();
+	// 	$('#displaySection').fadeIn();
+	// 	$('.backButton2').fadeIn();
+>>>>>>> 82cb6b79260981c0779cba243251ffc605c0e77b
 	// });
 
 	$('#searchAgainSubmit').on('click', function (e) {
@@ -152,6 +188,9 @@ yummlyApp.specificRecipe = function (recipeId) {
 yummlyApp.init = function () {
 	$('.yummlyForm').on('submit', function (e) {
 		e.preventDefault();
+		$('#yummlySection').hide();
+		$('#displaySection').fadeIn();
+		$('.backButton2').fadeIn();
 		$('html, body').animate({
 			scrollTop: $('.displayResults').offset().top
 		}, 1150);
@@ -184,9 +223,9 @@ var spotApp = {};
 
 spotApp.getSomething = function () {
 	var spotURL = "https://api.spotify.com/v1/search";
-	$('button').on('click', function (e) {
+	$('.musicType').on('click', function (e) {
 		e.preventDefault();
-		var searchQuery = $('.musicType').val();
+		var searchQuery = $(this).val();
 		$.ajax({
 			url: spotURL,
 			method: 'GET',

@@ -26,11 +26,7 @@ timerPlugIn.setClock = function(){
 var screenChange = {}
 
 screenChange.hideSections = function() {
-	$('#yummlySection').hide();
-	$('#displaySection').hide();
-	$('#timerSection').hide();
-	$('#externalRecipe').hide();
-	// $('#playlistSection').hide();
+	$('#yummlySection, #displaySection, #timerSection, .backButton, .backButton2, #externalRecipe, #spotifySection').hide();
 
 	console.log("I AM READY TO HIDE THINGS!");
 }
@@ -38,17 +34,40 @@ screenChange.hideSections = function() {
 screenChange.showSections = function() {
 	$('.musicType').on('click',function(e) {
 		e.preventDefault();
-		$('#playlistOptions').hide();
+
+		$('#playlistSection').hide();
+		$('#yummlySection').fadeIn();
+		$('.backButton').fadeIn();	
+	});
+
+	$('.backButton').on('click',function() {
+		$('#playlistSection').fadeIn();
+		$('#yummlySection').hide();
+		$('.backButton').hide();
+	});
+
+	$('.backButton2').on('click',function() {
+		$('#yummlySection').fadeIn();
+		$('#displaySection').hide();
+		$('.backButton').fadeIn();
+		$('.backButton2').hide();
+	});
+
+
+
+
+	$('#spotifySubmit').on('click',function(e) {
+		e.preventDefault();
 		$('#spotifySection').hide();
 		$('#yummlySection').fadeIn();
-		$('#displaySection').fadeIn();
 	});
 
 	// $('#recipeSubmit').on('click',function(e) {
-	// 	console.log('I work?');
 	// 	e.preventDefault();
 	// 	$('#yummlySection').hide();
-	// 	$('#displaySection').show();
+	// 	$('#displaySection').fadeIn();
+	// 	$('.backButton2').fadeIn();
+
 	// });
 
 	$('#searchAgainSubmit').on('click',function(e) {
@@ -168,6 +187,9 @@ yummlyApp.specificRecipe = function(recipeId) {
 yummlyApp.init = function() {
 	$('.yummlyForm').on('submit', function(e) {
 		e.preventDefault();
+		$('#yummlySection').hide();
+		$('#displaySection').fadeIn();
+		$('.backButton2').fadeIn();
 		$('html, body').animate({
 		        scrollTop: $('.displayResults').offset().top
 		    }, 1150);
@@ -203,9 +225,9 @@ var spotApp= {};
 
 spotApp.getSomething= function(){
 	var spotURL= "https://api.spotify.com/v1/search";
-	$('button').on('click', function(e){
+	$('.musicType').on('click', function(e){
 		e.preventDefault();
-		var searchQuery = $('.musicType').val();
+		var searchQuery = $(this).val();
 		$.ajax({
 			url: spotURL,
 			method: 'GET',
