@@ -30,7 +30,15 @@ timerPlugIn.setClock = function () {
 var screenChange = {};
 
 screenChange.hideSections = function () {
+<<<<<<< HEAD
+	$('#yummlySection').hide();
+	$('#displaySection').hide();
+	$('#timerSection').hide();
+	$('#externalRecipe').hide();
+	// $('#playlistSection').hide();
+=======
 	$('#yummlySection, #displaySection, #timerSection, .backButton, .backButton2, #externalRecipe, #spotifySection').hide();
+>>>>>>> 82cb6b79260981c0779cba243251ffc605c0e77b
 
 	console.log("I AM READY TO HIDE THINGS!");
 };
@@ -38,6 +46,19 @@ screenChange.hideSections = function () {
 screenChange.showSections = function () {
 	$('.musicType').on('click', function (e) {
 		e.preventDefault();
+<<<<<<< HEAD
+		$('#playlistOptions').hide();
+		$('#spotifySection').hide();
+		$('#yummlySection').fadeIn();
+		$('#displaySection').fadeIn();
+	});
+
+	// $('#recipeSubmit').on('click',function(e) {
+	// 	console.log('I work?');
+	// 	e.preventDefault();
+	// 	$('#yummlySection').hide();
+	// 	$('#displaySection').show();
+=======
 		$('#playlistSection').hide();
 		$('#yummlySection').fadeIn();
 		$('.backButton').fadeIn();
@@ -67,6 +88,7 @@ screenChange.showSections = function () {
 	// 	$('#yummlySection').hide();
 	// 	$('#displaySection').fadeIn();
 	// 	$('.backButton2').fadeIn();
+>>>>>>> 82cb6b79260981c0779cba243251ffc605c0e77b
 	// });
 
 	$('#searchAgainSubmit').on('click', function (e) {

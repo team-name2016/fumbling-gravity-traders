@@ -34,6 +34,7 @@ screenChange.hideSections = function() {
 screenChange.showSections = function() {
 	$('.musicType').on('click',function(e) {
 		e.preventDefault();
+
 		$('#playlistSection').hide();
 		$('#yummlySection').fadeIn();
 		$('.backButton').fadeIn();	
@@ -66,6 +67,7 @@ screenChange.showSections = function() {
 	// 	$('#yummlySection').hide();
 	// 	$('#displaySection').fadeIn();
 	// 	$('.backButton2').fadeIn();
+
 	// });
 
 	$('#searchAgainSubmit').on('click',function(e) {
@@ -148,6 +150,7 @@ yummlyApp.displayResults = function(results) {
 
 	var resultsId = results.id; //stores results id code
 	console.log(resultsId);
+
 
 	$('.resultsUl').append('<li class="resultsLi" data-id="'+resultsId+'"><div class="cardImage"><img src="' + resultsImage + '" alt=""></div><div class="cardTitle"></div><div class="resultTime"><i class="fa fa-clock-o" aria-hidden="true"></i> ' + resultsTime + ' mins</div><div class="resultId"></div></li>');
 }
