@@ -2,7 +2,7 @@
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-var totalTimeInSeconds;
+// var totalTimeInSeconds = 69;
 var screenChange = {};
 
 screenChange.hideSections = function () {
@@ -79,7 +79,8 @@ yummlyApp.getRecipes = function (query) {
 			q: query
 		}
 	}).then(function (recipeData) {
-		var totalTimeInSeconds = yummlyApp.checkResults(recipeData);
+		// var totalTimeInSeconds=yummlyApp.checkResults(recipeData);
+		yummlyApp.checkResults(recipeData);
 	});
 };
 
@@ -102,10 +103,12 @@ yummlyApp.checkResults = function (recipeData) {
 		e.preventDefault();
 		$('#externalRecipe').fadeIn();
 		var choice = $(this).data("id");
-		var totalTimeInSeconds = yummlyApp.specificRecipe(choice);
-		return totalTimeInSeconds;
+		// var totalTimeInSeconds=yummlyApp.specificRecipe(choice);
+		yummlyApp.specificRecipe(choice);
+
+		// return totalTimeInSeconds;
 	});
-	return totalTimeInSeconds;
+	// return totalTimeInSeconds;
 };
 
 // Display search results on the page
@@ -135,11 +138,10 @@ yummlyApp.specificRecipe = function (recipeId) {
 	}, _defineProperty(_$$ajax, 'url', 'http://api.yummly.com/v1/api/recipe/' + recipeId + '?_app_id=' + yummlyApp.id + '&_app_key=' + yummlyApp.key), _defineProperty(_$$ajax, 'method', 'GET'), _defineProperty(_$$ajax, 'dataType', 'json'), _defineProperty(_$$ajax, 'data', {
 		requirePictures: true
 	}), _$$ajax)).then(function (recipeData) {
-		console.log(recipeData);
-		var totalTimeInSeconds = recipeData.totalTimeInSeconds;
 		$('#externalSite').attr('data', recipeData.source.sourceRecipeUrl);
+		var totalTimeInSeconds = recipeData.totalTimeInSeconds;
 		$('#sidebar').attr('class', 'onScreen').draggable();
-		return totalTimeInSeconds;
+		timerPlugIn.setClock(totalTimeInSeconds);
 	});
 };
 
@@ -202,9 +204,7 @@ spotApp.getSomething = function () {
 	});
 };
 
-spotApp.displaySomething = function () {
-	console.log('annabel');
-};
+spotApp.displaySomething = function () {};
 
 spotApp.init = function () {
 	$('#sidebar').attr('class', 'offScreen');
@@ -214,31 +214,20 @@ spotApp.init = function () {
 
 var timerPlugIn = {};
 
-timerPlugIn.setClock = function () {
-
-	var time = +'2000';
-	var clock = $('.your-clock').FlipClock(time, {
+timerPlugIn.setClock = function (totalTimeInSeconds) {
+	var clock = $('.your-clock').FlipClock(totalTimeInSeconds, {
 		clockFace: 'MinuteCounter',
 		autoStart: false,
-		countdown: true
+		countdown: true,
+		callbacks: {
+			stop: function stop() {
+				$('.spotify').remove();
+			}
+		}
 	});
-	$('#startTimer').on('click', function (totalTimeInSeconds) {
-		var clock = $('.your-clock').FlipClock(totalTimeInSeconds, {
-			clockFace: 'MinuteCounter',
-			autoStart: true,
-			countdown: true
-		});
+	$('#timer').on('click', function () {
+		clock.start();
 	});
-
-	// var event = clock.on('click' function() {
-
-	// 	// This code will trigger every time this event is triggered.
-	// });
-	console.log("ready!");
-};
-
-timerPlugIn.init = function () {
-	timerPlugIn.setClock();
 };
 
 screenChange.init = function () {
@@ -249,8 +238,6 @@ screenChange.init = function () {
 // Doc ready, run init
 $(function () {
 	yummlyApp.init();
-	timerPlugIn.init();
-
 	spotApp.init();
 	screenChange.init();
 });
