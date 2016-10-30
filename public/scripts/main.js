@@ -142,7 +142,7 @@ yummlyApp.specificRecipe = function (recipeId) {
 	}), _$$ajax)).then(function (recipeData) {
 
 		var ourURL = recipeData.source.sourceRecipeUrl;
-		$('.searchFields').fadeOut();
+		$('.searchForm').fadeOut();
 		$('.displayResults').hide();
 		$('#externalSite').attr('data', ourURL);
 		var totalTimeInSeconds = recipeData.totalTimeInSeconds;
