@@ -142,11 +142,11 @@ yummlyApp.specificRecipe = function (recipeId) {
 	}), _$$ajax)).then(function (recipeData) {
 
 		var ourURL = recipeData.source.sourceRecipeUrl;
-
+		$('.searchFields').fadeOut();
 		$('.displayResults').hide();
 		$('#externalSite').attr('data', ourURL);
 		var totalTimeInSeconds = recipeData.totalTimeInSeconds;
-		$('#sidebar').attr('class', 'onScreen').draggable();
+		$('#sidebar').attr('class', 'onScreen');
 		timerPlugIn.setClock(totalTimeInSeconds);
 	});
 };
@@ -154,8 +154,8 @@ yummlyApp.specificRecipe = function (recipeId) {
 yummlyApp.init = function () {
 	$('.searchForm').on('submit', function (e) {
 		e.preventDefault();
-
-		$('#yummlySection').hide();
+		$('#instructions').fadeOut();
+		// $('#yummlySection').hide();
 		$('#displaySection').fadeIn();
 		$('.backButton2').fadeIn();
 		var chosenRecipes = $('#recipeSearch').val();
