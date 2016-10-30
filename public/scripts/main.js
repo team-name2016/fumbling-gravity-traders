@@ -6,7 +6,7 @@ var totalTimeInSeconds;
 var screenChange = {};
 
 screenChange.hideSections = function () {
-	$('#yummlySection, #displaySection, .backButton, .backButton2, #externalRecipe, #sidebar').hide();
+	$('#yummlySection, #displaySection, .backButton, .backButton2, #externalRecipe').hide();
 
 	console.log("I AM READY TO HIDE THINGS!");
 };
@@ -136,6 +136,7 @@ yummlyApp.specificRecipe = function (recipeId) {
 		console.log(recipeData);
 		var totalTimeInSeconds = recipeData.totalTimeInSeconds;
 		$('#externalSite').attr('data', recipeData.source.sourceRecipeUrl);
+		$('#sidebar').attr('class', 'onScreen').draggable();
 	});
 };
 
@@ -172,9 +173,12 @@ spotApp.getSomething = function () {
 				var random = Math.floor(Math.random() * 20);
 				var playlist = res.playlists.items[random];
 				var playlistID = playlist.uri;
+
 				console.log(playlistID);
 				var iframe = '<iframe src="https://embed.spotify.com/?uri=' + playlistID + ' "width=300" height="80" frameborder="0" allowtransparency ="true" id="iframeID"></iframe>';
+
 				$('.spotify').append(iframe);
+
 				spotApp.displaySomething(res);
 				//  
 
@@ -195,9 +199,13 @@ spotApp.getSomething = function () {
 	});
 };
 
-spotApp.displaySomething = function () {};
+spotApp.displaySomething = function () {
+	console.log('annabel');
+};
 
 spotApp.init = function () {
+	$('#sidebar').attr('class', 'offScreen');
+
 	spotApp.getSomething();
 };
 

@@ -22,11 +22,11 @@
 <body>
 <!-- header begins -->
 <header>
-	<div class="wrapper">
+	
 		<div class="headerContent">
 			<h1>Kitchen Tunes</h1>
 		</div>
-	</div>	
+	
 </header>
 
 <main>
@@ -50,7 +50,7 @@
 </section>
 
 <section class="yummlyRecipe" id="yummlySection">
-	<div class="wrapper chooseContent">
+	<div class="chooseContent">
 		<form action="" class="yummlyForm">
 			<div class="searchRecipe">
 				<h2 class="stepTwo">Step Two: Search for a recipe below.</h2>
@@ -66,7 +66,7 @@
 <!-- display results  -->
 <section class="displayResults" id="displaySection">
 
-	<div class="wrapper resultsContent">
+	<div class="resultsContent">
 	<!-- FOR DEV PURPOSES ONLY! -->
 		<h2>Choose A Recipe</h2>
 		<ul class="resultsUl">
@@ -80,20 +80,20 @@
 </section>
 
 <section class="externalRecipe" id="externalRecipe">
-<div class="objectTest animated fadeInDownBig wrapper">
+<!-- <div class="objectTest animated fadeInDownBig wrapper">
 		<div class="close" id="close">
 		<span></span>
 	</div>
 	<div class="toggle" id="toggle">
 		<span></span>
-	</div> 
+	</div>  -->
 	<object type="text/html" id="externalSite"></object>
-</div>
+<!-- </div> -->
 </section>
 <section class="sidebar" id="sidebar">
 	<div class="spotify">
 	</div>
-	<div id="closeSidebar" class="close"><span></span></div>
+	<!-- <div id="closeSidebar" class="close"><span></span></div> -->
 	<div class="your-clock">
 	</div>
 		<button id="timer">START TIMER</button>
@@ -101,6 +101,9 @@
 </main>
 <!-- scripts begin -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+
+<script src="dev/scripts/jquery-ui.min.js"></script>
 <script src="dev/scripts/flipclock.min.js"></script>
 
 <script src="dev/scripts/main.js"></script>
