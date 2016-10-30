@@ -155,7 +155,7 @@ yummlyApp.specificRecipe = function(recipeId) {
 		$('.displayResults').hide();
 		$('#externalSite').attr('data',ourURL);
 		 var totalTimeInSeconds = recipeData.totalTimeInSeconds;
-		$('#sidebar').attr('class','onScreen');	
+		// $('#sidebar').attr('class','onScreen');	
 		timerPlugIn.setClock(totalTimeInSeconds);
 	});
 }
@@ -238,7 +238,7 @@ spotApp.displaySomething = function (){
 };
 
 spotApp.init= function(){
-	$('#sidebar').attr('class','offScreen');
+	// $('#sidebar').attr('class','offScreen');
 
 	spotApp.getSomething();
 };
