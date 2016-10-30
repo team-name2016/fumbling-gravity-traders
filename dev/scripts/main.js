@@ -272,6 +272,7 @@ screenChange.init = function() {
 
 // Doc ready, run init
 $(function() {
+	
 	yummlyApp.init();
 	spotApp.init();
 	screenChange.init();
