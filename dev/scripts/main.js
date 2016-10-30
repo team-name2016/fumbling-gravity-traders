@@ -165,7 +165,7 @@ yummlyApp.specificRecipe = function(recipeId) {
 
 
 yummlyApp.init = function() {
-	$('#recipeSubmit').on('click', function(e) {
+	$('.searchForm').on('submit', function(e) {
 		e.preventDefault();
 		
 		$('#yummlySection').hide();
@@ -173,6 +173,7 @@ yummlyApp.init = function() {
 		$('.backButton2').fadeIn();
 		var chosenRecipes = $('#recipeSearch').val();
 		yummlyApp.getRecipes(chosenRecipes);
+		
 	});	
 
 };
@@ -184,7 +185,7 @@ var spotApp= {};
 
 spotApp.getSomething= function(){
 	var spotURL= "https://api.spotify.com/v1/search";
-	$('#recipeSubmit').on('click', function(e){
+	$('.searchForm').on('submit', function(e){
 		e.preventDefault();
 		var searchQuery = $('#spotifySearch').val();
 		$.ajax({
