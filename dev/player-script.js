@@ -4,7 +4,7 @@ spotApp.getSomething= function(){
 	var spotURL= "https://api.spotify.com/v1/search";
 	$('button').on('click', function(e){
 		e.preventDefault();
-		var searchQuery = $('.party').val();
+		var searchQuery = $('#saySomething').val();
 		$.ajax({
 			url: spotURL,
 			method: 'GET',
@@ -24,15 +24,15 @@ spotApp.getSomething= function(){
 		spotApp.displaySomething(res);
 
 
-		$('.spotify').on('click', function(){
-			var timer = +('1000');
-			console.log(timer);
-			var iframe = $("#iframeID");
-			console.log (iframe);
-			setTimeout(function() {
-			 iframe.remove();
-			}, timer);
-		});
+		// $('.spotify').on('click', function(){
+		// 	var timer = +('1000');
+		// 	console.log(timer);
+		// 	var iframe = $("#iframeID");
+		// 	console.log (iframe);
+		// 	setTimeout(function() {
+		// 	 iframe.remove();
+		// 	}, timer);
+		// });
 	}
 		});
 

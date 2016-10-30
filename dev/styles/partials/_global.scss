@@ -3,7 +3,7 @@
 }
 
 body {
-	background-image: url('../images/pexels-hero.jpg');
+	background-image: url('http://www.wildtextures.com/wp-content/uploads/2011/11/wildtextures-wooden-chopping-board-texture-2.jpg');
 	height:100vh;
 	background-size: 100% 100%;
 	color: white;
@@ -12,6 +12,7 @@ body {
 	align-items: center;
 	align-content: space-around;
 	font-size: 10px;
+	background-color: $blue;
 	&::before {
 	    content: ' ';
 	    display: block;
@@ -49,9 +50,12 @@ form{
 	justify-content: center;
 }
 h1 {
-	text-align: center;
-	letter-spacing: 2px;
-	font-size: 9rem;
+		text-align: center;
+		font-weight: 700;
+		letter-spacing: -3px;
+		font-weight: 300;
+		line-height: .8;
+		font-size: 5.4rem;
 
 	@media all and (max-width: 517px) {
 		font-size: 10.0rem;
