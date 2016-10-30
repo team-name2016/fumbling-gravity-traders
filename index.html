@@ -23,17 +23,15 @@
 <!-- header begins -->
 <header>
 	<div class="title">
-		<div class="title">
-			<h1>KITCHEN<br>TUNES</h1>
-			<p><span class="poweredBy">Powered by: </span><a href="http://yummly.com" target="_blank"><img src="dev/images/yummly-link.png" alt=""></a><a href="http://spotify.com" target="_blank"><img src="dev/images/spotify-link.png" alt=""></a></p>
-		</div>
+		<h1>KITCHEN<br>TUNES</h1>
+		<p><span class="poweredBy">Powered by: </span><a href="http://yummly.com" target="_blank"><img src="dev/images/yummly-link.png" alt=""></a><a href="http://spotify.com" target="_blank"><img src="dev/images/spotify-link.png" alt=""></a></p>
 	</div>
 
 	<div class="searchFields">
 		<form action="" class="searchForm">	
 				<div class="fields">	
-					<input type="search" id="recipeSearch" placeholder="What do you want to make?" required="true" onfocus="this.placeholder = ''" onblur="this.placeholder = 'What do you want to make?'">
-					<input type="search" id="spotifySearch" placeholder="What genre do you want to hear?" required="true" onfocus="this.placeholder = ''" onblur="this.placeholder = 'What do you want to make?'">
+					<input type="search" id="recipeSearch" placeholder="What do you want to make?" required onfocus="this.placeholder = ''" onblur="this.placeholder = 'What do you want to make?'">
+					<input type="search" id="spotifySearch" placeholder="What genre do you want to hear?"  required onfocus="this.placeholder = ''" onblur="this.placeholder = 'What do you want to make?'">
 				</div>	
 				<button type="submit" id="recipeSubmit">SUBMIT</button>
 		</form>
@@ -47,6 +45,14 @@
 		</div>
 
 	</div> -->
+	<section class="sidebar" id="sidebar">
+		<div class="spotify">
+		<!-- </div>
+		<div id="closeSidebar" class="close"><span></span></div> -->
+		<div class="your-clock">
+		</div>
+			<button id="timer"></button>
+	</section>
 </header>
 
 <main>
@@ -89,14 +95,6 @@
 	</div> 
 	<object type="text/html" id="externalSite"></object>
 
-</section>
-<section class="sidebar" id="sidebar">
-	<div class="spotify">
-	</div>
-	<!-- <div id="closeSidebar" class="close"><span></span></div> -->
-	<div class="your-clock">
-	</div>
-		<button id="timer"></button>
 </section>
 </main>
 <!-- scripts begin -->

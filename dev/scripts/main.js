@@ -157,8 +157,6 @@ yummlyApp.specificRecipe = function(recipeId) {
 		 var totalTimeInSeconds = recipeData.totalTimeInSeconds;
 		$('#sidebar').attr('class','onScreen').draggable();	
 		timerPlugIn.setClock(totalTimeInSeconds);
-
-
 	});
 }
 
