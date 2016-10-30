@@ -1,7 +1,194 @@
 header {
-	margin: 5% auto;
+	padding: 10px 0;
+	width: 100%;
+	background-color: white;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 10;
 
 	@media all and (max-width: 730px) {
-		margin: 10% auto;
 	}
 }
+
+.title {
+	flex: 1 1 50%;
+	// margin: 0 auto 12px auto;
+
+	h1 {
+		text-align: center;
+		font-weight: 700;
+		letter-spacing: -3px;
+		color: $black;
+		font-weight: 300;
+		line-height: .8;
+		font-size: 5.4rem;
+	}
+
+	p {
+		margin-top: .5%;;
+		text-align: center;
+	}
+
+	span.poweredBy {
+		text-align: center;
+		width: 100%;
+		color: $black;
+		font-family: $montserrat;
+		font-weight: 700;
+		letter-spacing: .3px;
+		font-size: 1.2rem;
+	}
+
+	img {
+		vertical-align: -3px;
+		margin-right: 3px;
+		width: 15px;
+		height: 15px;	
+	}
+	
+}
+
+.searchFields {
+	flex: 1 1 50%;
+}
+
+.searchForm{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+
+	& button {
+
+		border-radius: 4%;
+	    background-color: $blue;
+	    border: none;
+	    padding: 0 15px;
+	    color: white;
+	    letter-spacing: .8px;
+	    font-family: $montserrat;
+	    font-size: 1.5rem;
+
+	}
+}
+.fields {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	position: relative;
+
+	input[type='search'] {	
+		padding: 13px 53px 13px 17px;
+		color: lighten($black, 20%);
+		font-size: 1.7rem;
+
+		&:focus {
+			outline: none;
+		}
+	}
+}
+
+
+
+// .yummlySearch {
+// 	width: 100%;
+// 	position: relative;
+
+// 	input[type='search'] {
+// 		padding: 13px 53px 13px 17px;
+// 		color: lighten($black, 20%);
+// 		font-size: 1.7rem;
+
+// 		&:focus {
+// 			outline: none;
+// 		}
+// 	}
+
+// 	& #recipeSubmit {
+// 		border: none;
+// 		background-color: transparent;
+// 		margin: 0 auto;
+// 		position: absolute;
+// 		top: 50%;
+// 		transform: translateY(-50%);
+// 		right: 20px;
+// 		color: lighten($black, 30%);
+// 		font-size: 1.8rem;
+
+// 	}
+// }
+
+// .spotifySearch {
+// 	width: 100%;
+// 	position: relative;
+	
+
+// 	input[type='search'] {
+// 		padding: 13px 53px 13px 17px;
+// 		color: lighten($black, 20%);
+// 		font-size: 1.7rem;
+
+// 		&:focus {
+// 			outline: none;
+// 		}
+// 	}
+
+// 	& #spotifySubmit {
+// 		border: none;
+// 		background-color: transparent;
+// 		margin: 0 auto;
+// 		position: absolute;
+// 		top: 50%;
+// 		transform: translateY(-50%);
+// 		right: 20px;
+// 		color: lighten($black, 30%);
+// 		font-size: 1.8rem;
+
+// 	}
+// }
+
+
+
+// .yummlySearch {
+// 	background-color: white;
+// 	width: 50%;
+// 	display: flex;
+
+
+// 	& .title {
+// 		padding: 5px 0;
+// 		width: 38%;
+		
+// 		h1 {
+// 			text-align: center;
+// 			font-weight: 700;
+// 			letter-spacing: -.3px;
+// 			color: $black;
+// 			font-size: 2.6rem;
+// 		}
+
+// 		& p {
+// 			text-align: center;
+
+// 			span.poweredBy {
+// 				text-align: center;
+// 				width: 100%;
+// 				color: $black;
+// 				font-size: 1.12rem;
+// 			}
+
+// 			img {
+// 				vertical-align: -3px;
+// 				margin-right: 4px;
+// 				width: 13px;
+// 				height: 13px;	
+// 			}
+// 		}
+
+		
+
+// 	}
+
+// 		}
+
+

@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 
 	<link rel="stylesheet" href="public/styles/style.css">
-	<link href="https://fonts.googleapis.com/css?family=Rubik:400,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:700|Rubik:300,300i" rel="stylesheet">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
 	<link rel="shortcut icon" href="dev/images/favicon.ico" type="image/x-icon" />
@@ -22,48 +22,47 @@
 <body>
 <!-- header begins -->
 <header>
-	
-		<div class="headerContent">
-			<h1>Kitchen Tunes</h1>
+	<div class="title">
+		<div class="title">
+			<h1>KITCHEN<br>TUNES</h1>
+			<p><span class="poweredBy">Powered by: </span><a href="http://yummly.com" target="_blank"><img src="dev/images/yummly-link.png" alt=""></a><a href="http://spotify.com" target="_blank"><img src="dev/images/spotify-link.png" alt=""></a></p>
 		</div>
-	
+	</div>
+
+	<div class="searchFields">
+		<form action="" class="searchForm">	
+				<div class="fields">	
+					<input type="search" id="recipeSearch" placeholder="What do you want to make?" required="true" onfocus="this.placeholder = ''" onblur="this.placeholder = 'What do you want to make?'">
+					<input type="search" id="spotifySearch" placeholder="What genre do you want to hear?" required="true" onfocus="this.placeholder = ''" onblur="this.placeholder = 'What do you want to make?'">
+				</div>	
+				<button type="submit" id="recipeSubmit">SUBMIT</button>
+		</form>
+	</div>
+<!-- 
+		<div class="spotifySearch">
+			<form action="" class="spotifyForm">			
+					<input type="search" id="spotifySearch" placeholder="What genre do you want to hear?" required="true" onfocus="this.placeholder = ''" onblur="this.placeholder = 'What do you want to make?'">
+					<button type="submit" id="spotifySubmit"><i class="fa fa-search" aria-hidden="true"></i></button>
+			</form>
+		</div>
+
+	</div> -->
 </header>
 
 <main>
-
-<!-- back button -->
-<button class="backButton back"><i class="fa fa-arrow-left" aria-hidden="true"></i> BACK</button>
-<!-- back button 2 -->
-<button class="backButton2 back"><i class="fa fa-arrow-left" aria-hidden="true"></i> BACK</button>
-
-<section class="playlistOptions" id="playlistSection">
-	<h2>What Do You Want To Hear?</h2>
-    <button class="musicType" value="Country">Country</button>
-    <button class="musicType" value="Rock">Rock</button>
-    <button class="musicType" value="Party">Party</button>
-    <button class="musicType" value="Soul">Soul</button>
-    <button class="musicType" value="Disco">Disco</button>
-    <button class="musicType" value="Indie">Indie</button>
-    <button class="musicType" value="Vaporwave">Vaporwave</button>
-    <button class="musicType" value="Acoustic">Acoustic</button>
-    <button class="musicType" value="Reggae">Reggae</button>
+<!-- card 1 -->
+<section id="instructions">
+	<h1>Welcome To Kitchen Tunes!</h1>
+	<div class="steps">
+		<ol>
+			<li>Search for your food and tunes</li>
+			<li>Select a recipe</li>
+			<li>Start shaking while you make!</li>
+		</ol>
+	</div>	
 </section>
 
-<section class="yummlyRecipe" id="yummlySection">
-	<div class="chooseContent">
-		<form action="" class="yummlyForm">
-			<div class="searchRecipe">
-				<h2 class="stepTwo">Step Two: Search for a recipe below.</h2>
-				<!-- search for a recipe -->
-				<input type="text" id="recipeSearch" placeholder="What do you want to make?" required="true" onfocus="this.placeholder = ''" onblur="this.placeholder = 'What do you want to make?'">
-			</div>
-			<input type="submit" value="Find Your Recipe" id="recipeSubmit">
-		</form>
-	</div>
-</section>
-
-
-<!-- display results  -->
+<!-- display results  card 2 -->
 <section class="displayResults" id="displaySection">
 
 	<div class="resultsContent">
@@ -79,16 +78,17 @@
 	</div>
 </section>
 
+<!-- card 3 -->
 <section class="externalRecipe" id="externalRecipe">
-<!-- <div class="objectTest animated fadeInDownBig wrapper">
+<div class="objectTest animated fadeInDownBig wrapper">
 		<div class="close" id="close">
 		<span></span>
 	</div>
 	<div class="toggle" id="toggle">
 		<span></span>
-	</div>  -->
+	</div> 
 	<object type="text/html" id="externalSite"></object>
-<!-- </div> -->
+
 </section>
 <section class="sidebar" id="sidebar">
 	<div class="spotify">
