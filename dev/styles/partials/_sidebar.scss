@@ -1,9 +1,9 @@
 $darkBrown : rgba(53,29,17,.2);
 
 #sidebar{
-	background: $darkGrey;
-  background: url('../images/bo_play_pattern.png');
-  background-image: linear-gradient($darkBrown,$darkBrown), url('../images/wood.png');
+	// background: $darkGrey;
+  // background: url('../images/bo_play_pattern.png');
+  // background-image: linear-gradient($darkBrown,$darkBrown), url('../images/wood.png');
   // background: red;
   // background-image: url('../images/pexels-hero.jpg');
 	display: flex;
@@ -195,7 +195,6 @@ $darkBrown : rgba(53,29,17,.2);
 }
 
 #sidebar .your-clock{
-  margin-left:30px;
   margin-top:40px;
   
 }
