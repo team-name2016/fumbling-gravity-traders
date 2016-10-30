@@ -78,7 +78,7 @@ yummlyApp.getRecipes = function(query) {
 		}
 	})
 	.then(function(recipeData) {
-		yummlyApp.checkResults(recipeData);
+		var totalTimeInSeconds=yummlyApp.checkResults(recipeData);
 	});
 };
 
@@ -98,13 +98,14 @@ yummlyApp.checkResults = function (recipeData){
 			$('.resultsContent').html('<h3 class="noResults">No Recipes Found <i class="fa fa-frown-o" aria-hidden="true"></i></h3><label for="recipeSearch" class="searchAgain">Search again</label>');
 		}
 	
-		$('.resultsUl li').on('click',function(e){
+		var totalTimeInSeconds=$('.resultsUl li').on('click',function(e){
 		e.preventDefault();
 		$('#externalRecipe').fadeIn();
 		var choice = $(this).data("id");
-		yummlyApp.specificRecipe(choice);
-
+		var totalTimeInSeconds=yummlyApp.specificRecipe(choice);
+    return totalTimeInSeconds;
 	});
+		return totalTimeInSeconds;
 }
 
 
@@ -144,6 +145,7 @@ yummlyApp.specificRecipe = function(recipeId) {
 		 var totalTimeInSeconds = recipeData.totalTimeInSeconds;
 		$('#externalSite').attr('data',recipeData.source.sourceRecipeUrl);
 		$('#sidebar').attr('class','onScreen').draggable();
+		return totalTimeInSeconds;
 	});
 
 
