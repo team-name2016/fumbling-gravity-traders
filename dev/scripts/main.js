@@ -101,10 +101,13 @@ yummlyApp.checkResults = function (recipeData){
 			$('.resultsContent').html('<h3 class="noResults">No Recipes Found <i class="fa fa-frown-o" aria-hidden="true"></i></h3><label for="recipeSearch" class="searchAgain">Search again</label>');
 		}
 	
-		var totalTimeInSeconds=$('.resultsUl li').on('click',function(e){
+		$('.resultsUl li').on('click',function(e){
 		e.preventDefault();
 		$('#externalRecipe').fadeIn();
+
 		var choice = $(this).data("id");
+
+
 		// var totalTimeInSeconds=yummlyApp.specificRecipe(choice);
 		yummlyApp.specificRecipe(choice);
 
@@ -146,7 +149,11 @@ yummlyApp.specificRecipe = function(recipeId) {
 		}
 	})
 	.then(function(recipeData) {
-		$('#externalSite').attr('data',recipeData.source.sourceRecipeUrl);
+		
+		var ourURL = recipeData.source.sourceRecipeUrl;
+		
+		$('.displayResults').hide();
+		$('#externalSite').attr('data',ourURL);
 		 var totalTimeInSeconds = recipeData.totalTimeInSeconds;
 		$('#sidebar').attr('class','onScreen').draggable();	
 		timerPlugIn.setClock(totalTimeInSeconds);
@@ -158,8 +165,9 @@ yummlyApp.specificRecipe = function(recipeId) {
 
 
 yummlyApp.init = function() {
-	$('.yummlyForm').on('submit', function(e) {
+	$('#recipeSubmit').on('click', function(e) {
 		e.preventDefault();
+		
 		$('#yummlySection').hide();
 		$('#displaySection').fadeIn();
 		$('.backButton2').fadeIn();
@@ -176,9 +184,9 @@ var spotApp= {};
 
 spotApp.getSomething= function(){
 	var spotURL= "https://api.spotify.com/v1/search";
-	$('.musicType').on('click', function(e){
+	$('#recipeSubmit').on('click', function(e){
 		e.preventDefault();
-		var searchQuery = $(this).val();
+		var searchQuery = $('#spotifySearch').val();
 		$.ajax({
 			url: spotURL,
 			method: 'GET',
