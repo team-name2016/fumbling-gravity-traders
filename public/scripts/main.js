@@ -197,14 +197,14 @@ spotApp.getSomething = function () {
 
 				$('.spotify').on('click', function () {
 					spotWindow = window.open('https://play.spotify.com/user/1172590264/playlist/6k9SRlrbGcCIGVNq05VkXF');
-					// var timer = totalTimeInSeconds;
-					// var iframe = $("#iframeID");
-					// setTimeout(function () {
-					// 	iframe.remove();
-					// }, timer);
-					// setTimeout(function () {
-					// 	spotWindow.close();
-					// }, timer);
+					var timer = totalTimeInSeconds;
+					var iframe = $("#iframeID");
+					setTimeout(function () {
+						iframe.remove();
+					}, timer);
+					setTimeout(function () {
+						spotWindow.close();
+					}, timer);
 				});
 			}
 		});
@@ -228,8 +228,7 @@ timerPlugIn.setClock = function (totalTimeInSeconds) {
 		countdown: true,
 		callbacks: {
 			stop: function stop() {
-				$('spotWindow').close();
-				// Change player to Done Cooking Message
+				$('.spotify').remove();
 			}
 		}
 	});
