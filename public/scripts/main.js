@@ -92,6 +92,9 @@ yummlyApp.checkResults = function (recipeData) {
 	for (i = 0; i < filteredRecipes.length; i++) {
 		var searchResults = recipeData.matches[i];
 		console.log(searchResults); // logs the search result of 10 recipes based on the user's search
+		if (i === 9) {
+			break;
+		}
 		yummlyApp.displayResults(searchResults);
 	}
 
@@ -129,7 +132,7 @@ yummlyApp.displayResults = function (results) {
 	var resultsId = results.id; //stores results id code
 	console.log(resultsId);
 
-	$('.resultsUl').append('<li class="resultsLi" data-id="' + resultsId + '"><div class="cardImage"><img src="' + resultsImage + '" alt=""></div><div class="cardTitle"></div><div class="resultTime"><i class="fa fa-clock-o" aria-hidden="true"></i><p class="minutes"> ' + resultsTime + ' mins</p></div><div class="resultId"></div></li>');
+	$('.resultsUl').append('<li class="resultsLi" data-id="' + resultsId + '"><div class="cardImage"><img src="' + resultsImage + '" alt=""></div><div class="cardTitle"></div><div class="resultTime overlay"><i class="fa fa-clock-o" aria-hidden="true"></i><p class="minutes"> ' + resultsTime + ' mins</p></div><div class="resultId"></div></li>');
 };
 
 yummlyApp.specificRecipe = function (recipeId) {
