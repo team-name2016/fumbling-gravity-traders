@@ -257,7 +257,6 @@ timerPlugIn.setClock = function(totalTimeInSeconds){
 		});
 	$('.your-clock').on('click', function() {
 		clock.start();
-		spotWindow.close();
 		});
 	}
 

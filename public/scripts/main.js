@@ -149,6 +149,7 @@ yummlyApp.specificRecipe = function (recipeId) {
 		$('.displayResults').hide();
 		$('#externalSite').attr('data', ourURL);
 		var totalTimeInSeconds = recipeData.totalTimeInSeconds;
+		// $('#sidebar').attr('class','onScreen');	
 		timerPlugIn.setClock(totalTimeInSeconds);
 	});
 };
