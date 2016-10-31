@@ -3,7 +3,7 @@
 }
 
 body {
-	background-image: url('http://www.wildtextures.com/wp-content/uploads/2011/11/wildtextures-wooden-chopping-board-texture-2.jpg');
+	background-image: url('../../../public/images/choppingBoard.jpg');
 	height:100vh;
 	background-size: 100% 100%;
 	color: white;
@@ -28,20 +28,12 @@ body {
 	}
 }
 
-main {
-	// border: 2px double white;
-}
-
-
 section {
-	// For dev purposes ONLY!
-	// border: 2px solid red;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
 	justify-content: space-between;
-	// margin: 3% auto;
 } 
 
 form{
