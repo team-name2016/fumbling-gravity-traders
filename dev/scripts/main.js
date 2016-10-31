@@ -212,14 +212,14 @@ spotApp.getSomething= function(){
 
 		$('.spotify').on('click', function(){
 			spotWindow = window.open('https://play.spotify.com/user/1172590264/playlist/6k9SRlrbGcCIGVNq05VkXF');
-			var timer = totalTimeInSeconds;
-			var iframe = $("#iframeID");
-			setTimeout(function() {
-			 iframe.remove();
-			}, timer);
-			setTimeout(function() {
-			 spotWindow.close();
-			}, timer);
+			// var timer = totalTimeInSeconds;
+			// var iframe = $("#iframeID");
+			// setTimeout(function() {
+			//  iframe.remove();
+			// }, timer);
+			// setTimeout(function() {
+			//  spotWindow.close();
+			// }, timer);
 			
 		});
 	}
@@ -231,9 +231,6 @@ spotApp.getSomething= function(){
 
 
 spotApp.displaySomething = function (){
-
-
-
 
 };
 
@@ -252,12 +249,14 @@ timerPlugIn.setClock = function(totalTimeInSeconds){
 			countdown: true,
 			callbacks: {
 				stop: function(){
-					$('.spotify').remove();
+			 spotWindow.close();
+			
 				}
 			}
 		});
-	$('#timer').on('click', function() {
+	$('.your-clock').on('click', function() {
 		clock.start();
+		spotWindow.close();
 		});
 	}
 

@@ -1,6 +1,6 @@
 .instructions {
 // 	CHANGE BACK!!!!!
-	display: none; 
+	display: flex; 
 	flex-direction: column;
 	align-items: center;
 	margin-top: 10%;
@@ -11,7 +11,7 @@
 	ol{
 		font-family: $montserrat;
 		font-weight: 400;
-		font-size: 2.5rem;
+		font-size: 3.5rem;
 		line-height: 4rem;
 		margin-top: 7%;
 		letter-spacing: .5px;
